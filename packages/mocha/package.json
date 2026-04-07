@@ -6,12 +6,18 @@
   "bugs": {
     "url": "https://github.com/MetaMask/eslint-config/issues"
   },
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/MetaMask/eslint-config.git"
   },
-  "license": "MIT",
+  "files": [
+    "src/",
+    "!src/**/*.test.mjs"
+  ],
   "type": "module",
+  "main": "./src/index.mjs",
+  "types": "./src/index.d.mts",
   "exports": {
     ".": {
       "import": {
@@ -20,12 +26,10 @@
       }
     }
   },
-  "main": "./src/index.mjs",
-  "types": "./src/index.d.mts",
-  "files": [
-    "src/",
-    "!src/**/*.test.mjs"
-  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "scripts": {
     "changelog:update": "../../scripts/update-changelog.sh @metamask/eslint-config-mocha",
     "changelog:validate": "../../scripts/validate-changelog.sh @metamask/eslint-config-mocha",
@@ -38,27 +42,23 @@
   "devDependencies": {
     "@jest/globals": "^29.7.0",
     "@metamask/auto-changelog": "^3.4.4",
-    "@metamask/eslint-config": "workspace:^",
-    "eslint": "^9.11.0",
+    "@metamask/oxlint-config": "workspace:^",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import-x": "^4.3.0",
     "eslint-plugin-jsdoc": "^50.2.4",
     "eslint-plugin-mocha": "^10.5.0",
     "eslint-plugin-prettier": "^5.2.1",
     "globals": "^15.9.0",
+    "oxlint": "^1.59.0",
     "prettier": "^3.3.3",
     "vitest": "^2.1.9"
   },
   "peerDependencies": {
-    "@metamask/eslint-config": "workspace:^",
-    "eslint": "^9.11.0",
-    "eslint-plugin-mocha": "^10.5.0"
+    "@metamask/oxlint-config": "workspace:^",
+    "eslint-plugin-mocha": "^10.5.0",
+    "oxlint": "^1.59.0"
   },
   "engines": {
     "node": "^18.18 || >=20"
-  },
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
   }
 }
