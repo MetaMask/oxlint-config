@@ -1,4 +1,4 @@
-declare module '@metamask/eslint-config-commonjs' {
+declare module '@metamask/oxlint-config-commonjs' {
   import type { Linter } from 'eslint';
 
   const config: Linter.Config[];

@@ -1,4 +1,4 @@
-import { createConfig } from '@metamask/eslint-config';
+import { createConfig } from '@metamask/oxlint-config';
 import globals from 'globals';
 import { createRequire } from 'module';
 
@@ -10,7 +10,7 @@ const environmentRules = customRequire('./environment.json');
  * @type {import('eslint').Linter.Config[]}
  */
 const config = createConfig({
-  name: '@metamask/eslint-config-browser',
+  name: '@metamask/oxlint-config-browser',
 
   languageOptions: {
     globals: {

@@ -4,7 +4,7 @@
     "@metamask/auto-changelog",
     "@metamask/create-release-branch",
     "@types/eslint__js",
-    "eslint-config-prettier",
+    "oxlint-config-prettier",
     "eslint-plugin-import-x",
     "eslint-plugin-jest",
     "eslint-plugin-jsdoc",

@@ -1,28 +1,28 @@
 {
-  "name": "@metamask/eslint-config-browser",
+  "name": "@metamask/oxlint-config-browser",
   "version": "15.0.0",
-  "description": "Shareable MetaMask ESLint plugin for browser environments.",
-  "homepage": "https://github.com/MetaMask/eslint-config#readme",
+  "description": "Shareable MetaMask Oxlint config for browser environments",
+  "homepage": "https://github.com/MetaMask/oxlint-config#readme",
   "bugs": {
-    "url": "https://github.com/MetaMask/eslint-config/issues"
+    "url": "https://github.com/MetaMask/oxlint-config/issues"
   },
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/MetaMask/eslint-config.git"
+    "url": "https://github.com/MetaMask/oxlint-config.git"
   },
   "files": [
     "src/",
-    "!src/**/*.test.mjs"
+    "!src/**/*.test.js"
   ],
   "type": "module",
-  "main": "./src/index.mjs",
-  "types": "./src/index.d.mts",
+  "main": "./src/index.js",
+  "types": "./src/index.d.ts",
   "exports": {
     ".": {
       "import": {
-        "types": "./src/index.d.mts",
-        "default": "./src/index.mjs"
+        "types": "./src/index.d.ts",
+        "default": "./src/index.js"
       }
     }
   },
@@ -31,24 +31,14 @@
     "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
-    "changelog:update": "../../scripts/update-changelog.sh @metamask/eslint-config-browser",
-    "changelog:validate": "../../scripts/validate-changelog.sh @metamask/eslint-config-browser",
+    "changelog:update": "../../scripts/update-changelog.sh @metamask/oxlint-config-browser",
+    "changelog:validate": "../../scripts/validate-changelog.sh @metamask/oxlint-config-browser",
     "publish": "npm publish",
-    "test": "eslint ."
-  },
-  "dependencies": {
-    "@eslint/js": "^9.11.0",
-    "globals": "^15.9.0"
+    "test": "oxlint ."
   },
   "devDependencies": {
-    "@jest/globals": "^29.7.0",
     "@metamask/auto-changelog": "^3.4.4",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-import-x": "^4.3.0",
-    "eslint-plugin-jsdoc": "^50.2.4",
-    "eslint-plugin-prettier": "^5.2.1",
     "oxlint": "^1.59.0",
-    "prettier": "^3.3.3",
     "vitest": "^2.1.9"
   },
   "peerDependencies": {

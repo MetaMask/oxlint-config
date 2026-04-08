@@ -1,4 +1,4 @@
-import { createConfig } from '@metamask/eslint-config';
+import { createConfig } from '@metamask/oxlint-config';
 import jest from 'eslint-plugin-jest';
 import globals from 'globals';
 
@@ -7,7 +7,7 @@ import globals from 'globals';
  */
 const config = createConfig([
   {
-    name: '@metamask/eslint-config-jest',
+    name: '@metamask/oxlint-config-jest',
 
     extends: [jest.configs['flat/recommended'], jest.configs['flat/style']],
 
@@ -47,7 +47,7 @@ const config = createConfig([
     },
   },
   {
-    name: '@metamask/eslint-config-jest/typescript',
+    name: '@metamask/oxlint-config-jest/typescript',
 
     files: ['**/*.test.ts', '**/*.test.tsx', '**/*.test.mts', '**/*.test.cts'],
 

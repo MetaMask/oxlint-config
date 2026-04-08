@@ -1,4 +1,4 @@
-import { createConfig } from '@metamask/eslint-config';
+import { createConfig } from '@metamask/oxlint-config';
 import node from 'eslint-plugin-n';
 import globals from 'globals';
 import { createRequire } from 'module';
@@ -11,7 +11,7 @@ const environmentRules = customRequire('./environment.json');
  * @type {import('eslint').Linter.Config[]}
  */
 const config = createConfig({
-  name: '@metamask/eslint-config-nodejs',
+  name: '@metamask/oxlint-config-nodejs',
 
   extends: [node.configs['flat/recommended']],
 

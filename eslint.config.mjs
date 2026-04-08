@@ -1,9 +1,9 @@
 // @ts-check
 
-import base, { createConfig } from '@metamask/eslint-config';
-import nodejs from '@metamask/eslint-config-nodejs';
-import typescript from '@metamask/eslint-config-typescript';
-import vitest from '@metamask/eslint-config-vitest';
+import base, { createConfig } from '@metamask/oxlint-config';
+import nodejs from '@metamask/oxlint-config-nodejs';
+import typescript from '@metamask/oxlint-config-typescript';
+import vitest from '@metamask/oxlint-config-vitest';
 
 const config = createConfig([
   {

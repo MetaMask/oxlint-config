@@ -1,4 +1,4 @@
-import { createConfig } from '@metamask/eslint-config';
+import { createConfig } from '@metamask/oxlint-config';
 import * as resolver from 'eslint-import-resolver-typescript';
 import importX from 'eslint-plugin-import-x';
 import jsdoc from 'eslint-plugin-jsdoc';
@@ -7,7 +7,7 @@ import jsdoc from 'eslint-plugin-jsdoc';
 import typescript from 'typescript-eslint';
 
 const config = createConfig({
-  name: '@metamask/eslint-config-typescript',
+  name: '@metamask/oxlint-config-typescript',
 
   plugins: {
     '@typescript-eslint': typescript.plugin,
