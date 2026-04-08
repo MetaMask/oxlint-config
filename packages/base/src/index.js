@@ -2,7 +2,7 @@
 
 import { defineConfig } from 'oxlint';
 
-import { getEnvironmentGlobals } from './src/index.ts';
+import { getEnvironmentGlobals } from './globals.js';
 
 const { availableGlobals, restrictedGlobals } = getEnvironmentGlobals(
   'Node.js and browser',
@@ -10,8 +10,11 @@ const { availableGlobals, restrictedGlobals } = getEnvironmentGlobals(
 );
 
 export default defineConfig({
-  extends: [],
   plugins: ['eslint', 'import', 'jsdoc', 'promise'],
+  globals: availableGlobals,
+  env: {
+    'shared-node-browser': true,
+  },
 
   rules: {
     // Default ESLint rules, all set to "error" since Oxlint sets them to "warn"
@@ -176,7 +179,7 @@ export default defineConfig({
     'eslint/no-useless-return': 'error',
     'eslint/no-var': 'error',
     'eslint/no-void': 'error',
-    'eslint/object-shorthand': 'error',
+    // 'eslint/object-shorthand': 'error',
     'eslint/operator-assignment': 'error',
     'eslint/prefer-const': 'error',
     'eslint/prefer-destructuring': [
@@ -269,3 +272,6 @@ export default defineConfig({
     'promise/valid-params': 'error',
   },
 });
+
+export { getEnvironmentGlobals } from './globals.js';
+export { createConfig } from './utils.js';

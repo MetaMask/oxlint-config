@@ -1265,6 +1265,7 @@ __metadata:
   dependencies:
     "@jest/globals": "npm:^29.7.0"
     "@metamask/auto-changelog": "npm:^3.4.4"
+    deepmerge: "npm:^4.3.1"
     globals: "npm:^17.4.0"
     oxfmt: "npm:^0.44.0"
     oxlint: "npm:^1.59.0"
@@ -3181,7 +3182,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"deepmerge@npm:^4.2.2":
+"deepmerge@npm:^4.2.2, deepmerge@npm:^4.3.1":
   version: 4.3.1
   resolution: "deepmerge@npm:4.3.1"
   checksum: 10/058d9e1b0ff1a154468bf3837aea436abcfea1ba1d165ddaaf48ca93765fdd01a30d33c36173da8fbbed951dd0a267602bc782fe288b0fc4b7e1e7091afc4529
