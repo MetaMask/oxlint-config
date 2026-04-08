@@ -4,15 +4,7 @@
     "@metamask/auto-changelog",
     "@metamask/create-release-branch",
     "@types/eslint__js",
-    "oxlint-config-prettier",
-    "eslint-plugin-import-x",
-    "eslint-plugin-jest",
-    "eslint-plugin-jsdoc",
-    "eslint-plugin-n",
-    "eslint-plugin-prettier",
-    "prettier-plugin-packagejson",
     "typescript",
-    "typescript-eslint",
     "vite"
   ]
 }

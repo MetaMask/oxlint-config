@@ -46,7 +46,6 @@
   },
   "peerDependencies": {
     "@metamask/oxlint-config": "workspace:^",
-    "eslint-plugin-jest": "^28.8.3",
     "oxlint": "^1.59.0"
   },
   "engines": {
