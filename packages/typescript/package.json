@@ -36,7 +36,7 @@
   "devDependencies": {
     "@metamask/auto-changelog": "^3.4.4",
     "@metamask/oxlint-config": "workspace:^",
-    "oxlint": "^1.59.0",
+    "oxlint": "^1.82.0",
     "oxlint-tsgolint": "^0.20.0",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.58.1",
@@ -44,7 +44,7 @@
   },
   "peerDependencies": {
     "@metamask/oxlint-config": "workspace:^",
-    "oxlint": "^1.59.0",
+    "oxlint": "^1.82.0",
     "oxlint-tsgolint": "^0.20.0"
   },
   "engines": {

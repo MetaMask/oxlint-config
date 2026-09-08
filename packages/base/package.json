@@ -43,10 +43,10 @@
   "devDependencies": {
     "@metamask/auto-changelog": "^3.4.4",
     "oxfmt": "^0.44.0",
-    "oxlint": "^1.59.0"
+    "oxlint": "^1.82.0"
   },
   "peerDependencies": {
-    "oxlint": "^1.59.0"
+    "oxlint": "^1.82.0"
   },
   "engines": {
     "node": "^18.18 || >=20"

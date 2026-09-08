@@ -39,12 +39,12 @@
   "devDependencies": {
     "@metamask/auto-changelog": "^3.4.4",
     "@metamask/oxlint-config": "workspace:^",
-    "oxlint": "^1.59.0",
+    "oxlint": "^1.82.0",
     "vitest": "^2.1.9"
   },
   "peerDependencies": {
     "@metamask/oxlint-config": "workspace:^",
-    "oxlint": "^1.59.0"
+    "oxlint": "^1.82.0"
   },
   "engines": {
     "node": "^18.18 || >=20"

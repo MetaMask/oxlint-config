@@ -239,7 +239,7 @@ export default defineConfig({
     'jsdoc/implements-on-classes': 'error',
     'jsdoc/no-defaults': 'error',
     'jsdoc/require-param-name': 'error',
-    'jsdoc/require-param': ['error', { unnamedRootBase: ['options'] }],
+    'jsdoc/require-param': 'error',
     'jsdoc/require-param-description': 'error',
     'jsdoc/require-param-type': 'error',
     'jsdoc/require-property': 'error',
