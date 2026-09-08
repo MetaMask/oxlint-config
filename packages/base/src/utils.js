@@ -76,7 +76,7 @@ export function createConfig(config) {
 
     return deepmerge(mergedConfig, parsedConfig, {
       arrayMerge(target, source, options) {
-        if (options && options.isMergeableObject) {
+        if (options?.isMergeableObject) {
           return [...new Set([...target, ...source])];
         }
 

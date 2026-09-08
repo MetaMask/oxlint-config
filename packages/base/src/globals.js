@@ -43,8 +43,8 @@ const GLOBALS_ARRAY = GLOBALS_ENVIRONMENTS.flatMap((environment) =>
  */
 export function getEnvironmentGlobals(name, environment) {
   const environments = getArray(environment);
-  const environmentGlobals = environments.flatMap((environment) =>
-    Object.keys(globals[environment] ?? {}),
+  const environmentGlobals = environments.flatMap((key) =>
+    Object.keys(globals[key] ?? {}),
   );
 
   /**

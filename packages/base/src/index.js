@@ -210,7 +210,7 @@ export default defineConfig({
     // Import rules.
     'import/extensions': [
       'error',
-      'never',
+      'ignorePackages',
       {
         json: 'always',
       },

@@ -17,14 +17,10 @@
     "!src/**/__test__"
   ],
   "type": "module",
-  "main": "./src/index.js",
-  "types": "./src/index.d.ts",
   "exports": {
     ".": {
-      "import": {
-        "types": "./src/index.d.ts",
-        "default": "./src/index.js"
-      }
+      "types": "./src/index.d.ts",
+      "default": "./src/index.js"
     }
   },
   "publishConfig": {
@@ -41,13 +37,15 @@
     "@metamask/auto-changelog": "^3.4.4",
     "@metamask/oxlint-config": "workspace:^",
     "oxlint": "^1.59.0",
+    "oxlint-tsgolint": "^0.20.0",
     "typescript": "^5.9.3",
+    "typescript-eslint": "^8.58.1",
     "vitest": "^2.1.9"
   },
   "peerDependencies": {
     "@metamask/oxlint-config": "workspace:^",
     "oxlint": "^1.59.0",
-    "typescript": ">=4.8.4 <6"
+    "oxlint-tsgolint": "^0.20.0"
   },
   "engines": {
     "node": "^18.18 || >=20"
