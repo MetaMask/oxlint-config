@@ -3,20 +3,10 @@
   "array-callback-return": "deny",
   "block-scoped-var": "deny",
   "constructor-super": "deny",
-  "curly": [
-    "deny",
-    [
-      "all"
-    ]
-  ],
+  "curly": ["deny", ["all"]],
   "default-case": "deny",
   "default-param-last": "deny",
-  "eqeqeq": [
-    "deny",
-    [
-      "smart"
-    ]
-  ],
+  "eqeqeq": ["deny", ["smart"]],
   "for-direction": "deny",
   "grouped-accessor-pairs": "deny",
   "guard-for-in": "deny",
@@ -26,14 +16,7 @@
       {
         "min": 2,
         "properties": "never",
-        "exceptionPatterns": [
-          "_",
-          "a",
-          "b",
-          "i",
-          "j",
-          "k"
-        ]
+        "exceptionPatterns": ["_", "a", "b", "i", "j", "k"]
       }
     ]
   ],
@@ -82,12 +65,7 @@
   "no-global-assign": "deny",
   "no-implicit-coercion": "deny",
   "no-import-assign": "deny",
-  "no-inner-declarations": [
-    "deny",
-    [
-      "functions"
-    ]
-  ],
+  "no-inner-declarations": ["deny", ["functions"]],
   "no-invalid-regexp": "deny",
   "no-irregular-whitespace": "deny",
   "no-iterator": "deny",
@@ -4578,12 +4556,7 @@
       }
     ]
   ],
-  "no-return-assign": [
-    "deny",
-    [
-      "except-parens"
-    ]
-  ],
+  "no-return-assign": ["deny", ["except-parens"]],
   "no-script-url": "deny",
   "no-self-assign": "deny",
   "no-self-compare": "deny",
@@ -4687,12 +4660,7 @@
   "symbol-description": "deny",
   "use-isnan": "deny",
   "valid-typeof": "deny",
-  "yoda": [
-    "deny",
-    [
-      "never"
-    ]
-  ],
+  "yoda": ["deny", ["never"]],
   "import/default": "warn",
   "import/extensions": [
     "deny",
@@ -4729,9 +4697,7 @@
     "deny",
     [
       {
-        "unnamedRootBase": [
-          "options"
-        ]
+        "unnamedRootBase": ["options"]
       }
     ]
   ],

@@ -37,7 +37,6 @@
   },
   "devDependencies": {
     "@metamask/auto-changelog": "^3.4.4",
-    "oxfmt": "^0.44.0",
     "oxlint": "^1.82.0"
   },
   "peerDependencies": {

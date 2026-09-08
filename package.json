@@ -34,6 +34,7 @@
     "@metamask/utils": "^9.1.0",
     "@types/node": "^22.5.5",
     "depcheck": "^1.4.7",
+    "oxfmt": "^0.67.0",
     "oxlint": "^1.82.0",
     "typescript": "^5.9.3",
     "vite": "^5.4.19",
