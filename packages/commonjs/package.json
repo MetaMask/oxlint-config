@@ -16,8 +16,6 @@
     "!src/**/*.test.js"
   ],
   "type": "module",
-  "main": "./src/index.js",
-  "types": "./src/index.d.ts",
   "exports": {
     ".": {
       "import": {

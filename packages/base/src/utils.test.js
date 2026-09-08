@@ -19,7 +19,7 @@ describe('createConfig', () => {
       },
     };
 
-    expect(createConfig(extension)).toEqual(expectedConfig);
+    expect(createConfig(extension)).toStrictEqual(expectedConfig);
   });
 
   it('extends multiple configs', () => {

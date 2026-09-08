@@ -598,7 +598,6 @@ __metadata:
   dependencies:
     "@metamask/auto-changelog": "npm:^3.4.4"
     deepmerge: "npm:^4.3.1"
-    globals: "npm:^17.4.0"
     oxfmt: "npm:^0.44.0"
     oxlint: "npm:^1.82.0"
   peerDependencies:
@@ -2830,13 +2829,6 @@ __metadata:
     is-windows: "npm:^1.0.1"
     which: "npm:^1.2.14"
   checksum: 10/68cf78f81cd85310095ca1f0ec22dd5f43a1059646b2c7b3fc4a7c9ce744356e66ca833adda4e5753e38021847aaec393a159a029ba2d257c08ccb3f00ca2899
-  languageName: node
-  linkType: hard
-
-"globals@npm:^17.4.0":
-  version: 17.4.0
-  resolution: "globals@npm:17.4.0"
-  checksum: 10/ffad244617e94efcb3da72b7beefc941167c21316148ce378f322db7af72db06468f370e23224b3c7b17b5173a7c75b134e5e7b0949f2828519054a76892508d
   languageName: node
   linkType: hard
 

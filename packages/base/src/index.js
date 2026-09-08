@@ -2,16 +2,8 @@
 
 import { defineConfig } from 'oxlint';
 
-import { getEnvironmentGlobals } from './globals.js';
-
-const { availableGlobals, restrictedGlobals } = getEnvironmentGlobals(
-  'Node.js and browser',
-  ['shared-node-browser'],
-);
-
 export default defineConfig({
   plugins: ['eslint', 'import', 'jsdoc', 'promise'],
-  globals: availableGlobals,
   env: {
     'shared-node-browser': true,
   },
@@ -137,7 +129,6 @@ export default defineConfig({
     ],
     'eslint/no-proto': 'error',
     'eslint/no-return-assign': ['error', 'except-parens'],
-    'eslint/no-restricted-globals': ['error', ...restrictedGlobals],
     'eslint/no-script-url': 'error',
     'eslint/no-self-compare': 'error',
     'eslint/no-shadow': ['error', { builtinGlobals: true }],
@@ -273,5 +264,4 @@ export default defineConfig({
   },
 });
 
-export { getEnvironmentGlobals } from './globals.js';
 export { createConfig } from './utils.js';

@@ -1,13 +1,7 @@
 import { createConfig } from '@metamask/oxlint-config';
-import vitest from '@vitest/eslint-plugin';
 
-/**
- * @type {import('eslint').Linter.Config[]}
- */
 const config = createConfig({
-  name: '@metamask/oxlint-config-vitest',
-
-  extends: [vitest.configs.recommended],
+  plugins: ['vitest'],
 
   rules: {
     'vitest/consistent-test-it': ['error', { fn: 'it' }],

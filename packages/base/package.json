@@ -16,14 +16,10 @@
     "!src/**/*.test.js"
   ],
   "type": "module",
-  "main": "./src/index.js",
-  "types": "./src/index.d.mts",
   "exports": {
     ".": {
-      "import": {
-        "types": "./src/index.d.ts",
-        "default": "./src/index.js"
-      }
+      "types": "./src/index.d.ts",
+      "default": "./src/index.js"
     }
   },
   "publishConfig": {
@@ -37,8 +33,7 @@
     "test": "oxlint ."
   },
   "dependencies": {
-    "deepmerge": "^4.3.1",
-    "globals": "^17.4.0"
+    "deepmerge": "^4.3.1"
   },
   "devDependencies": {
     "@metamask/auto-changelog": "^3.4.4",
