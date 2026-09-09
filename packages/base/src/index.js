@@ -78,8 +78,26 @@ export default defineConfig({
     'eslint/default-case': 'error',
     'eslint/default-param-last': 'error',
     'eslint/eqeqeq': ['error', 'smart'],
+    'eslint/func-name-matching': 'error',
     'eslint/grouped-accessor-pairs': 'error',
     'eslint/guard-for-in': 'error',
+    'eslint/id-denylist': [
+      // This sets this rule to 'error', the rest are the forbidden IDs.
+      'error',
+
+      // These are basically all useless contractions.
+      'buf',
+      'cat',
+      'err',
+      'cb',
+      'cfg',
+      'hex',
+      'int',
+      'msg',
+      'num',
+      'opt',
+      'sig',
+    ],
     'eslint/id-length': [
       'error',
       {
@@ -196,10 +214,12 @@ export default defineConfig({
     ],
     'eslint/prefer-numeric-literals': 'error',
     'eslint/prefer-promise-reject-errors': 'error',
+    'eslint/prefer-regex-literals': 'error',
     'eslint/prefer-rest-params': 'error',
     'eslint/prefer-spread': 'error',
     'eslint/prefer-template': 'error',
     'eslint/radix': 'error',
+    'eslint/require-unicode-regexp': 'error',
     'eslint/symbol-description': 'error',
     'eslint/yoda': ['error', 'never'],
 
