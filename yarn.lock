@@ -575,7 +575,7 @@ __metadata:
   peerDependencies:
     "@metamask/oxlint-config": "workspace:^"
     oxlint: ^1.82.0
-    oxlint-tsgolint: ^0.20.0
+    oxlint-tsgolint: ^7.0.2001
   languageName: unknown
   linkType: soft
 
