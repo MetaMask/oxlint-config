@@ -1,6 +1,6 @@
 {
   "name": "@metamask/oxlint-config-typescript",
-  "version": "15.0.0",
+  "version": "0.0.0",
   "description": "Shareable MetaMask Oxlint config for TypeScript",
   "homepage": "https://github.com/MetaMask/oxlint-config#readme",
   "bugs": {
@@ -37,7 +37,7 @@
     "@metamask/auto-changelog": "^3.4.4",
     "@metamask/oxlint-config": "workspace:^",
     "oxlint": "^1.82.0",
-    "oxlint-tsgolint": "^0.20.0",
+    "oxlint-tsgolint": "^7.0.2001",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.58.1",
     "vitest": "^2.1.9"
@@ -45,7 +45,7 @@
   "peerDependencies": {
     "@metamask/oxlint-config": "workspace:^",
     "oxlint": "^1.82.0",
-    "oxlint-tsgolint": "^0.20.0"
+    "oxlint-tsgolint": "^7.0.2001"
   },
   "engines": {
     "node": "^18.18 || >=20"

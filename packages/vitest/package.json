@@ -1,6 +1,6 @@
 {
   "name": "@metamask/oxlint-config-vitest",
-  "version": "15.0.0",
+  "version": "0.0.0",
   "description": "Shareable MetaMask Oxlint config for Vitest",
   "homepage": "https://github.com/MetaMask/oxlint-config#readme",
   "bugs": {

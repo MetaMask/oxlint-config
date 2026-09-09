@@ -1,5 +1,8 @@
 # `@metamask/oxlint-config`
 
+> [!WARN]
+> These configs are not production-ready yet.
+
 This monorepo contains MetaMask's Oxlint configurations as npm packages.
 The different configs are split up into individual packages so that we can
 correctly specify their peer dependencies.
