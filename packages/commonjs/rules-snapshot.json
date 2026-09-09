@@ -3,20 +3,10 @@
   "array-callback-return": "deny",
   "block-scoped-var": "deny",
   "constructor-super": "deny",
-  "curly": [
-    "deny",
-    [
-      "all"
-    ]
-  ],
+  "curly": ["deny", ["all"]],
   "default-case": "deny",
   "default-param-last": "deny",
-  "eqeqeq": [
-    "deny",
-    [
-      "smart"
-    ]
-  ],
+  "eqeqeq": ["deny", ["smart"]],
   "for-direction": "deny",
   "getter-return": "warn",
   "grouped-accessor-pairs": "deny",
@@ -27,14 +17,7 @@
       {
         "min": 2,
         "properties": "never",
-        "exceptionPatterns": [
-          "_",
-          "a",
-          "b",
-          "i",
-          "j",
-          "k"
-        ]
+        "exceptionPatterns": ["_", "a", "b", "i", "j", "k"]
       }
     ]
   ],
@@ -83,12 +66,7 @@
   "no-global-assign": "deny",
   "no-implicit-coercion": "deny",
   "no-import-assign": "deny",
-  "no-inner-declarations": [
-    "deny",
-    [
-      "functions"
-    ]
-  ],
+  "no-inner-declarations": ["deny", ["functions"]],
   "no-invalid-regexp": "deny",
   "no-irregular-whitespace": "deny",
   "no-iterator": "deny",
@@ -126,12 +104,7 @@
     ]
   ],
   "no-proto": "deny",
-  "no-return-assign": [
-    "deny",
-    [
-      "except-parens"
-    ]
-  ],
+  "no-return-assign": ["deny", ["except-parens"]],
   "no-script-url": "deny",
   "no-self-assign": "deny",
   "no-self-compare": "deny",
@@ -221,18 +194,8 @@
   "symbol-description": "deny",
   "use-isnan": "deny",
   "valid-typeof": "deny",
-  "yoda": [
-    "deny",
-    [
-      "never"
-    ]
-  ],
-  "import/consistent-type-specifier-style": [
-    "deny",
-    [
-      "prefer-top-level"
-    ]
-  ],
+  "yoda": ["deny", ["never"]],
+  "import/consistent-type-specifier-style": ["deny", ["prefer-top-level"]],
   "import/default": "warn",
   "import/extensions": [
     "deny",
@@ -280,12 +243,7 @@
   "node/callback-return": "deny",
   "node/exports-style": "deny",
   "node/global-require": "deny",
-  "node/handle-callback-err": [
-    "deny",
-    [
-      "^(err|error)$"
-    ]
-  ],
+  "node/handle-callback-err": ["deny", ["^(err|error)$"]],
   "node/no-mixed-requires": "deny",
   "node/no-new-require": "deny",
   "node/no-path-concat": "deny",
@@ -317,12 +275,7 @@
   "typescript/array-type": "deny",
   "typescript/await-thenable": "warn",
   "typescript/consistent-type-assertions": "deny",
-  "typescript/consistent-type-definitions": [
-    "deny",
-    [
-      "type"
-    ]
-  ],
+  "typescript/consistent-type-definitions": ["deny", ["type"]],
   "typescript/consistent-type-exports": "deny",
   "typescript/explicit-function-return-type": "deny",
   "typescript/no-array-delete": "warn",
@@ -447,9 +400,7 @@
     "deny",
     [
       {
-        "ignore": [
-          "describe"
-        ]
+        "ignore": ["describe"]
       }
     ]
   ],
