@@ -79,6 +79,66 @@ describe('createConfig', () => {
     });
   });
 
+  it('resolves extends inside overrides', () => {
+    const typescriptConfig = {
+      plugins: ['typescript'],
+      rules: { '@typescript-eslint/no-explicit-any': 'error' },
+    };
+
+    const extension = {
+      rules: { 'no-console': 'error' },
+      overrides: [
+        {
+          files: ['**/*.ts'],
+          extends: typescriptConfig,
+          rules: { 'no-debugger': 'warn' },
+        },
+      ],
+    };
+
+    expect(createConfig(extension)).toStrictEqual({
+      rules: { 'no-console': 'error' },
+      overrides: [
+        {
+          files: ['**/*.ts'],
+          plugins: ['typescript'],
+          rules: {
+            '@typescript-eslint/no-explicit-any': 'error',
+            'no-debugger': 'warn',
+          },
+        },
+      ],
+    });
+  });
+
+  it('resolves extends inside overrides of a base config', () => {
+    const typescriptConfig = {
+      plugins: ['typescript'],
+      rules: { '@typescript-eslint/no-explicit-any': 'error' },
+    };
+
+    const baseConfig = {
+      rules: { 'no-console': 'error' },
+      overrides: [
+        {
+          files: ['**/*.ts'],
+          extends: typescriptConfig,
+        },
+      ],
+    };
+
+    expect(createConfig({ extends: baseConfig })).toStrictEqual({
+      rules: { 'no-console': 'error' },
+      overrides: [
+        {
+          files: ['**/*.ts'],
+          plugins: ['typescript'],
+          rules: { '@typescript-eslint/no-explicit-any': 'error' },
+        },
+      ],
+    });
+  });
+
   it('handles nested extends', () => {
     const extension = {
       extends: [

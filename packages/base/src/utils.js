@@ -39,40 +39,61 @@ export function getArray(value) {
  *   import { createConfig } from '@metamask/oxlint-config';
  *   import typescript from '@metamask/oxlint-config-typescript';
  *
- *   const configs = createConfig({
+ *   const config = createConfig({
  *     extends: typescript,
  *   });
  *
- *   export default configs;
+ *   export default config;
  *
  * @example <caption>Extending multiple configs</caption>
  *   import { createConfig } from '@metamask/oxlint-config';
  *   import typescript from '@metamask/oxlint-config-typescript';
  *   import nodejs from '@metamask/oxlint-config-nodejs';
  *
- *   const configs = createConfig({
+ *   const config = createConfig({
  *     extends: [typescript, nodejs],
  *   });
  *
  *   export default configs;
  *
+ * @example <caption>Extending configs with overrides</caption>
+ *   import { createConfig } from '@metamask/oxlint-config';
+ *   import typescript from '@metamask/oxlint-config-typescript';
+ *   import nodejs from '@metamask/oxlint-config-nodejs';
+ *
+ *   const config = createConfig({
+ *     extends: [nodejs],
+ *
+ *     overrides: [
+ *       {
+ *         files: ['**\/*.ts'],
+ *         extends: [typescript],
+ *       },
+ *     ],
+ *   });
+ *
+ *   export default config;
+ *
  * @param {OxlintConfig} config - The config object to create, which may include
- *   an `extends` property that specifies one or more base configs to extend.
+ *   an `extends` property that specifies one or more base configs to extend,
+ *   and an `overrides` property for file-specific config overrides.
  * @returns {Omit<OxlintConfig, "extends">} A single config object with all the
  *   extended configs merged in.
  */
 export function createConfig(config) {
-  const { extends: baseConfig, ...extension } = config;
+  const { extends: baseConfig, overrides, ...extension } = config;
   const baseConfigs = getArray(baseConfig);
 
-  if (baseConfigs.length === 0) {
-    return extension;
-  }
+  const resolvedOverrides = overrides?.map((override) =>
+    createConfig(override),
+  );
+
+  const resolvedExtension = resolvedOverrides
+    ? { ...extension, overrides: resolvedOverrides }
+    : extension;
 
   const mergedBaseConfig = baseConfigs.reduce((mergedConfig, currentConfig) => {
-    const parsedConfig = currentConfig.extends
-      ? createConfig(currentConfig)
-      : currentConfig;
+    const parsedConfig = createConfig(currentConfig);
 
     return deepmerge(mergedConfig, parsedConfig, {
       arrayMerge(target, source, options) {
@@ -85,5 +106,5 @@ export function createConfig(config) {
     });
   }, {});
 
-  return deepmerge(mergedBaseConfig, extension);
+  return deepmerge(mergedBaseConfig, resolvedExtension);
 }
