@@ -93,9 +93,7 @@ export function createConfig(config) {
     : extension;
 
   const mergedBaseConfig = baseConfigs.reduce((mergedConfig, currentConfig) => {
-    const parsedConfig = currentConfig.extends
-      ? createConfig(currentConfig)
-      : currentConfig;
+    const parsedConfig = createConfig(currentConfig);
 
     return deepmerge(mergedConfig, parsedConfig, {
       arrayMerge(target, source, options) {
