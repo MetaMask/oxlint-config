@@ -4,6 +4,11 @@ import { defineConfig } from 'oxlint';
 
 export default defineConfig({
   plugins: ['eslint', 'import', 'jsdoc', 'promise'],
+
+  categories: {
+    correctness: 'allow',
+  },
+
   env: {
     'shared-node-browser': true,
   },
