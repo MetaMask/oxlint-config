@@ -1,6 +1,9 @@
-# `@metamask/eslint-config`
+# `@metamask/oxlint-config`
 
-This monorepo contains MetaMask's ESLint configurations as npm packages.
+> [!WARNING]
+> These configs are not production-ready yet.
+
+This monorepo contains MetaMask's Oxlint configurations as npm packages.
 The different configs are split up into individual packages so that we can
 correctly specify their peer dependencies.
 
@@ -10,7 +13,7 @@ correctly specify their peer dependencies.
 
 - Install the current LTS version of [Node.js](https://nodejs.org)
   - If you are using [nvm](https://github.com/creationix/nvm#installation) (recommended) running `nvm install` will install the latest version and running `nvm use` will automatically choose the right node version for you.
-- Install [Yarn v3](https://yarnpkg.com/getting-started/install)
+- Install [Yarn v4](https://yarnpkg.com/getting-started/install)
 - Run `yarn install` to install dependencies and run any required post-install scripts
 
 ### Testing and Linting
@@ -20,16 +23,6 @@ Run `yarn lint` to run the linter, or run `yarn lint:fix` to run the linter and 
 ### Updating or Adding Configs
 
 Configs targeting an entirely new environment should be added in a new package.
-Our rule validation script (see `./scripts/validate-rules.js`) forbids the
-following rules:
-
-- Rules that override Prettier's recommended ESLint rules
-- Uselessly configured rules, meaning:
-  - Rules that are disabled but never enabled by an extended config.
-  - Rules that are configured identically by the package's extended configs.
-- For the purpose of determining the "usefulness" of rules, we include our base
-  config (`@metamask/eslint-config`) in the set of extended configs, since it
-  should always be extended by the consumer in practice.
 
 Linting will fail in CI if any of the above conditions are violated in any
 config.
@@ -65,7 +58,6 @@ This option provides a visual interface to streamline the release process:
 2. **Select packages to release.**
 
    The UI will show all packages with changes since their last release. For each package:
-
    - Choose whether to include it in the release
    - Select an appropriate version bump (patch, minor, or major) following SemVer rules
    - The UI will automatically validate your selections and identify dependencies that need to be included
@@ -73,12 +65,10 @@ This option provides a visual interface to streamline the release process:
 3. **Review and resolve dependency requirements.**
 
    The UI automatically analyzes your selections and identifies potential dependency issues that need to be addressed before proceeding. You'll need to review and resolve these issues by either:
-
    - Including the suggested additional packages
    - Confirming that you want to skip certain packages (if you're certain they don't need to be updated)
 
    Common types of dependency issues you might encounter:
-
    - **Missing dependencies**: If you're releasing Package A that depends on Package B, the UI will prompt you to include Package B
    - **Breaking change impacts**: If you're releasing Package B with breaking changes, the UI will identify packages that have peer dependencies on Package B that need to be updated
    - **Version incompatibilities**: The UI will flag if your selected version bumps don't follow semantic versioning rules relative to dependent packages
@@ -88,7 +78,6 @@ This option provides a visual interface to streamline the release process:
 4. **Confirm your selections.**
 
    Once you're satisfied with your package selections and version bumps, confirm them in the UI. This will:
-
    - Create a new branch named `release/<new release version>`
    - Update the version in each package's `package.json`
    - Add a new section to each package's `CHANGELOG.md` for the new version
@@ -96,7 +85,6 @@ This option provides a visual interface to streamline the release process:
 5. **Review and update changelogs.**
 
    Each selected package will have a new changelog section. Review these entries to ensure they are helpful for consumers:
-
    - Categorize entries appropriately following the ["Keep a Changelog"](https://keepachangelog.com/en/1.0.0/) guidelines. Ensure that no changes are listed under "Uncategorized".
    - Remove changelog entries that don't affect consumers of the package (e.g. lockfile changes or development environment changes). Exceptions may be made for changes that might be of interest despite not having an effect upon the published package (e.g. major test improvements, security improvements, improved documentation, etc.).
    - Reword changelog entries to explain changes in terms that users of the package will understand (e.g., avoid referencing internal variables/concepts).
@@ -146,12 +134,10 @@ If you prefer more direct control over the release process:
 3. **Review and resolve dependency requirements.**
 
    The tool automatically analyzes your selections and identifies potential dependency issues that need to be addressed before proceeding. You'll need to review and resolve these issues by either:
-
    - Including the suggested additional packages
    - Confirming that you want to skip certain packages (if you're certain they don't need to be updated)
 
    Common types of dependency issues you might encounter:
-
    - **Missing dependencies**: If you're releasing Package A that depends on Package B, the UI will prompt you to include Package B
    - **Breaking change impacts**: If you're releasing Package B with breaking changes, the UI will identify packages that have peer dependencies on Package B that need to be updated
    - **Version incompatibilities**: The UI will flag if your selected version bumps don't follow semantic versioning rules relative to dependent packages
@@ -161,12 +147,10 @@ If you prefer more direct control over the release process:
 4. **Review and update changelogs for relevant packages.**
 
    Once the tool proceeds without issue, you will be on the new release branch. In addition, each package you intend to release has been updated in two ways:
-
    - The version in `package.json` has been bumped.
    - A new section has been added at the top of `CHANGELOG` for the new version.
 
    At this point, you need to review the changelog entries and ensure that they are helpful for consumers:
-
    - Categorize entries appropriately following the ["Keep a Changelog"](https://keepachangelog.com/en/1.0.0/) guidelines. Ensure that no changes are listed under "Uncategorized".
    - Remove changelog entries that don't affect consumers of the package (e.g. lockfile changes or development environment changes). Exceptions may be made for changes that might be of interest despite not having an effect upon the published package (e.g. major test improvements, security improvements, improved documentation, etc.).
    - Reword changelog entries to explain changes in terms that users of the package will understand (e.g., avoid referencing internal variables/concepts).

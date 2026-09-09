@@ -1,42 +1,33 @@
-# `@metamask/eslint-config-vitest`
+# `@metamask/oxlint-config-vitest`
 
-MetaMask's [Vitest](https://vitest.dev/) ESLint configuration.
+MetaMask's [Vitest](https://vitest.dev/) Oxlint configuration.
 
 ## Usage
 
 ```bash
 yarn add --dev \
-    @metamask/eslint-config@^14.0.0 \
-    @metamask/eslint-config-vitest@^1.0.0 \
-    @vitest/eslint-plugin@^1.1.4 \
-    eslint@^9.11.0 \
-    eslint-config-prettier@^9.1.0 \
-    eslint-plugin-import-x@^4.3.0 \
-    eslint-plugin-jsdoc@^50.2.4 \
-    eslint-plugin-prettier@^5.2.1 \
-    eslint-plugin-promise@^7.1.0 \
-    prettier@^3.3.3
+    @metamask/oxlint-config@^0.0.0 \
+    @metamask/oxlint-config-vitest@^0.0.0 \
+    oxlint@^1.82.0
 ```
 
 The order in which you extend ESLint rules matters.
-The `@metamask/*` eslint configs should be added to the config array _last_,
-with `@metamask/eslint-config` first, and `@metamask/eslint-config-*` in any
+The `@metamask/*` Oxlint configs should be added to the config array _last_,
+with `@metamask/oxlint-config` first, and `@metamask/oxlint-config-*` in any
 order thereafter.
 
 ```js
-import base, { createConfig } from '@metamask/eslint-config';
-import vitest from '@metamask/eslint-config-vitest';
+import base, { createConfig } from '@metamask/oxlint-config';
+import vitest from '@metamask/oxlint-config-vitest';
 
 const config = createConfig({
-  {
-    extends: [
-      // Any custom shared config should be added here.
-      // ...
+  extends: [
+    // Any custom shared config should be added here.
+    // ...
 
-      // This should be added last unless you know what you're doing.
-      base,
-      vitest,
-    ],
-  }
+    // This should be added last unless you know what you're doing.
+    base,
+    vitest,
+  ],
 });
 ```

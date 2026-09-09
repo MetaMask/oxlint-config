@@ -1,64 +1,48 @@
 {
-  "name": "@metamask/eslint-config-nodejs",
-  "version": "15.0.0",
-  "description": "Shareable MetaMask ESLint config for Node.js.",
-  "homepage": "https://github.com/MetaMask/eslint-config#readme",
+  "name": "@metamask/oxlint-config-nodejs",
+  "version": "0.0.0",
+  "description": "Shareable MetaMask Oxlint config for Node.js",
+  "homepage": "https://github.com/MetaMask/oxlint-config#readme",
   "bugs": {
-    "url": "https://github.com/MetaMask/eslint-config/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/MetaMask/eslint-config.git"
+    "url": "https://github.com/MetaMask/oxlint-config/issues"
   },
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MetaMask/oxlint-config.git"
+  },
+  "files": [
+    "src/",
+    "!src/**/*.test.js"
+  ],
   "type": "module",
   "exports": {
     ".": {
-      "import": {
-        "types": "./src/index.d.mts",
-        "default": "./src/index.mjs"
-      }
+      "types": "./src/index.d.ts",
+      "default": "./src/index.js"
     }
-  },
-  "main": "./src/index.mjs",
-  "types": "./src/index.d.mts",
-  "files": [
-    "src/",
-    "!src/**/*.test.mjs"
-  ],
-  "scripts": {
-    "changelog:update": "../../scripts/update-changelog.sh @metamask/eslint-config-nodejs",
-    "changelog:validate": "../../scripts/validate-changelog.sh @metamask/eslint-config-nodejs",
-    "publish": "npm publish",
-    "test": "eslint ."
-  },
-  "dependencies": {
-    "@eslint/js": "^9.11.0",
-    "globals": "^15.9.0"
-  },
-  "devDependencies": {
-    "@jest/globals": "^29.7.0",
-    "@metamask/auto-changelog": "^3.4.4",
-    "@metamask/eslint-config": "workspace:^",
-    "eslint": "^9.11.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-import-x": "^4.3.0",
-    "eslint-plugin-jsdoc": "^50.2.4",
-    "eslint-plugin-n": "^17.10.3",
-    "eslint-plugin-prettier": "^5.2.1",
-    "prettier": "^3.3.3",
-    "vitest": "^2.1.9"
-  },
-  "peerDependencies": {
-    "@metamask/eslint-config": "workspace:^",
-    "eslint": "^9.11.0",
-    "eslint-plugin-n": "^17.10.3"
-  },
-  "engines": {
-    "node": "^18.18 || >=20"
   },
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
+  },
+  "scripts": {
+    "changelog:update": "../../scripts/update-changelog.sh @metamask/oxlint-config-nodejs",
+    "changelog:validate": "../../scripts/validate-changelog.sh @metamask/oxlint-config-nodejs",
+    "publish": "npm publish",
+    "test": "oxlint ."
+  },
+  "devDependencies": {
+    "@metamask/auto-changelog": "^3.4.4",
+    "@metamask/oxlint-config": "workspace:^",
+    "oxlint": "^1.82.0",
+    "vitest": "^2.1.9"
+  },
+  "peerDependencies": {
+    "@metamask/oxlint-config": "workspace:^",
+    "oxlint": "^1.82.0"
+  },
+  "engines": {
+    "node": "^18.18 || >=20"
   }
 }

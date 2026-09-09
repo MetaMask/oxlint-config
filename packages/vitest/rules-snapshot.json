@@ -1,42 +1,59 @@
 {
-  "vitest/consistent-test-it": ["error", { "fn": "it" }],
-  "vitest/expect-expect": "error",
-  "vitest/no-alias-methods": "error",
-  "vitest/no-commented-out-tests": "error",
-  "vitest/no-conditional-expect": "error",
-  "vitest/no-conditional-in-test": "error",
-  "vitest/no-disabled-tests": "error",
-  "vitest/no-duplicate-hooks": "error",
-  "vitest/no-focused-tests": "error",
-  "vitest/no-identical-title": "error",
-  "vitest/no-import-node-test": "error",
-  "vitest/no-interpolation-in-snapshots": "error",
-  "vitest/no-mocks-import": "error",
-  "vitest/no-restricted-matchers": [
-    "error",
-    {
-      "resolves": "Use `expect(await promise)` instead.",
-      "toBeFalsy": "Avoid `toBeFalsy`.",
-      "toBeTruthy": "Avoid `toBeTruthy`.",
-      "toMatchSnapshot": "Use `toMatchInlineSnapshot()` instead.",
-      "toThrowErrorMatchingSnapshot": "Use `toThrowErrorMatchingInlineSnapshot()` instead."
-    }
+  "vitest/consistent-test-it": [
+    "deny",
+    [
+      {
+        "fn": "it"
+      }
+    ]
   ],
-  "vitest/no-standalone-expect": "error",
-  "vitest/no-test-prefixes": "error",
-  "vitest/no-test-return-statement": "error",
-  "vitest/prefer-hooks-on-top": "error",
-  "vitest/prefer-lowercase-title": ["error", { "ignore": ["describe"] }],
-  "vitest/prefer-spy-on": "error",
-  "vitest/prefer-strict-equal": "error",
-  "vitest/prefer-to-be": "error",
-  "vitest/prefer-to-contain": "error",
-  "vitest/prefer-to-have-length": "error",
-  "vitest/prefer-todo": "error",
-  "vitest/require-local-test-context-for-concurrent-snapshots": "error",
-  "vitest/require-to-throw-message": "error",
-  "vitest/require-top-level-describe": "error",
-  "vitest/valid-describe-callback": "error",
-  "vitest/valid-expect": ["error", { "alwaysAwait": true }],
-  "vitest/valid-title": "error"
+  "vitest/no-alias-methods": "deny",
+  "vitest/no-commented-out-tests": "deny",
+  "vitest/no-conditional-expect": "deny",
+  "vitest/no-conditional-in-test": "deny",
+  "vitest/no-disabled-tests": "deny",
+  "vitest/no-duplicate-hooks": "deny",
+  "vitest/no-focused-tests": "deny",
+  "vitest/no-interpolation-in-snapshots": "deny",
+  "vitest/no-mocks-import": "deny",
+  "vitest/no-restricted-matchers": [
+    "deny",
+    [
+      {
+        "resolves": "Use `expect(await promise)` instead.",
+        "toBeFalsy": "Avoid `toBeFalsy`.",
+        "toBeTruthy": "Avoid `toBeTruthy`.",
+        "toMatchSnapshot": "Use `toMatchInlineSnapshot()` instead.",
+        "toThrowErrorMatchingSnapshot": "Use `toThrowErrorMatchingInlineSnapshot()` instead."
+      }
+    ]
+  ],
+  "vitest/no-standalone-expect": "deny",
+  "vitest/no-test-prefixes": "deny",
+  "vitest/no-test-return-statement": "deny",
+  "vitest/prefer-hooks-on-top": "deny",
+  "vitest/prefer-lowercase-title": [
+    "deny",
+    [
+      {
+        "ignore": ["describe"]
+      }
+    ]
+  ],
+  "vitest/prefer-spy-on": "deny",
+  "vitest/prefer-strict-equal": "deny",
+  "vitest/prefer-to-be": "deny",
+  "vitest/prefer-to-contain": "deny",
+  "vitest/prefer-to-have-length": "deny",
+  "vitest/prefer-todo": "deny",
+  "vitest/require-to-throw-message": "deny",
+  "vitest/require-top-level-describe": "deny",
+  "vitest/valid-expect": [
+    "deny",
+    [
+      {
+        "alwaysAwait": true
+      }
+    ]
+  ]
 }

@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "allowImportingTsExtensions": true,
     "allowJs": true,
     "esModuleInterop": true,
     "exactOptionalPropertyTypes": true,
@@ -15,6 +16,6 @@
     "target": "ES2022",
     "verbatimModuleSyntax": true
   },
-  "include": ["**/*.mjs", "**/*.mts"],
+  "include": ["**/*.js", "**/*.ts"],
   "exclude": ["./dist", "**/node_modules"]
 }

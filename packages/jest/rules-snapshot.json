@@ -1,46 +1,50 @@
 {
-  "@typescript-eslint/unbound-method": "off",
-  "jest/consistent-test-it": ["error", { "fn": "it" }],
-  "jest/expect-expect": "error",
-  "jest/no-alias-methods": "error",
-  "jest/no-commented-out-tests": "error",
-  "jest/no-conditional-expect": "error",
-  "jest/no-deprecated-functions": "error",
-  "jest/no-disabled-tests": "error",
-  "jest/no-done-callback": "error",
-  "jest/no-duplicate-hooks": "error",
-  "jest/no-export": "error",
-  "jest/no-focused-tests": "error",
-  "jest/no-identical-title": "error",
-  "jest/no-interpolation-in-snapshots": "error",
-  "jest/no-jasmine-globals": "error",
-  "jest/no-mocks-import": "error",
-  "jest/no-restricted-matchers": [
-    "error",
-    {
-      "resolves": "Use `expect(await promise)` instead.",
-      "toBeFalsy": "Avoid `toBeFalsy`",
-      "toBeTruthy": "Avoid `toBeTruthy`",
-      "toMatchSnapshot": "Use `toMatchInlineSnapshot()` instead",
-      "toThrowErrorMatchingSnapshot": "Use `toThrowErrorMatchingInlineSnapshot()` instead"
-    }
+  "jest/consistent-test-it": [
+    "deny",
+    [
+      {
+        "fn": "it"
+      }
+    ]
   ],
-  "jest/no-standalone-expect": "error",
-  "jest/no-test-prefixes": "error",
-  "jest/no-test-return-statement": "error",
-  "jest/prefer-hooks-on-top": "error",
-  "jest/prefer-lowercase-title": ["error", { "ignore": ["describe"] }],
-  "jest/prefer-spy-on": "error",
-  "jest/prefer-strict-equal": "error",
-  "jest/prefer-to-be": "error",
-  "jest/prefer-to-contain": "error",
-  "jest/prefer-to-have-length": "error",
-  "jest/prefer-todo": "error",
-  "jest/require-to-throw-message": "error",
-  "jest/require-top-level-describe": "error",
-  "jest/unbound-method": "error",
-  "jest/valid-describe-callback": "error",
-  "jest/valid-expect": ["error", { "alwaysAwait": true }],
-  "jest/valid-expect-in-promise": "error",
-  "jest/valid-title": "error"
+  "jest/expect-expect": "deny",
+  "jest/no-alias-methods": "deny",
+  "jest/no-commented-out-tests": "deny",
+  "jest/no-disabled-tests": "deny",
+  "jest/no-duplicate-hooks": "deny",
+  "jest/no-restricted-matchers": [
+    "deny",
+    [
+      {
+        "resolves": "Use `expect(await promise)` instead.",
+        "toBeFalsy": "Avoid `toBeFalsy`",
+        "toBeTruthy": "Avoid `toBeTruthy`",
+        "toMatchSnapshot": "Use `toMatchInlineSnapshot()` instead",
+        "toThrowErrorMatchingSnapshot": "Use `toThrowErrorMatchingInlineSnapshot()` instead"
+      }
+    ]
+  ],
+  "jest/no-test-return-statement": "deny",
+  "jest/prefer-hooks-on-top": "deny",
+  "jest/prefer-lowercase-title": [
+    "deny",
+    [
+      {
+        "ignore": ["describe"]
+      }
+    ]
+  ],
+  "jest/prefer-spy-on": "deny",
+  "jest/prefer-strict-equal": "deny",
+  "jest/prefer-todo": "deny",
+  "jest/require-to-throw-message": "deny",
+  "jest/require-top-level-describe": "deny",
+  "jest/valid-expect": [
+    "deny",
+    [
+      {
+        "alwaysAwait": true
+      }
+    ]
+  ]
 }
