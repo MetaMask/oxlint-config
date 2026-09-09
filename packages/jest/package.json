@@ -36,7 +36,7 @@
   },
   "devDependencies": {
     "@metamask/auto-changelog": "^3.4.4",
-    "@metamask/oxlint-config": "workspace:*",
+    "@metamask/oxlint-config": "^0.0.0",
     "oxlint": "^1.82.0",
     "vitest": "^2.1.9"
   },
