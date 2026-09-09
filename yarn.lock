@@ -474,7 +474,7 @@ __metadata:
     oxlint: "npm:^1.82.0"
     vitest: "npm:^2.1.9"
   peerDependencies:
-    "@metamask/oxlint-config": "workspace:*"
+    "@metamask/oxlint-config": ^0.0.0
     oxlint: ^1.82.0
   languageName: unknown
   linkType: soft
@@ -487,7 +487,7 @@ __metadata:
     oxlint: "npm:^1.82.0"
     vitest: "npm:^2.1.9"
   peerDependencies:
-    "@metamask/oxlint-config": "workspace:*"
+    "@metamask/oxlint-config": ^0.0.0
     oxlint: ^1.82.0
   languageName: unknown
   linkType: soft
@@ -501,7 +501,7 @@ __metadata:
     oxlint: "npm:^1.82.0"
     vitest: "npm:^2.1.9"
   peerDependencies:
-    "@metamask/oxlint-config": "workspace:*"
+    "@metamask/oxlint-config": ^0.0.0
     oxlint: ^1.82.0
   languageName: unknown
   linkType: soft
@@ -515,7 +515,7 @@ __metadata:
     oxlint: "npm:^1.82.0"
     vitest: "npm:^2.1.9"
   peerDependencies:
-    "@metamask/oxlint-config": "workspace:*"
+    "@metamask/oxlint-config": ^0.0.0
     oxlint: ^1.82.0
   languageName: unknown
   linkType: soft
@@ -553,7 +553,7 @@ __metadata:
     typescript-eslint: "npm:^8.58.1"
     vitest: "npm:^2.1.9"
   peerDependencies:
-    "@metamask/oxlint-config": "workspace:*"
+    "@metamask/oxlint-config": ^0.0.0
     oxlint: ^1.82.0
     oxlint-tsgolint: ^7.0.2001
   languageName: unknown
@@ -568,7 +568,7 @@ __metadata:
     oxlint: "npm:^1.82.0"
     vitest: "npm:^2.1.9"
   peerDependencies:
-    "@metamask/oxlint-config": "workspace:*"
+    "@metamask/oxlint-config": ^0.0.0
     oxlint: ^1.82.0
   languageName: unknown
   linkType: soft
