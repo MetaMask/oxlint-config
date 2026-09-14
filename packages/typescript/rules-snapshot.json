@@ -1,19 +1,32 @@
 {
   "default-param-last": "deny",
+  "no-array-constructor": "deny",
   "no-dupe-class-members": "deny",
   "no-shadow": "deny",
+  "no-throw-literal": "allow",
   "no-unused-expressions": "deny",
   "no-unused-vars": "deny",
   "no-use-before-define": "deny",
   "no-useless-constructor": "deny",
   "typescript/array-type": "deny",
+  "typescript/await-thenable": "deny",
+  "typescript/ban-ts-comment": "deny",
   "typescript/consistent-type-assertions": "deny",
   "typescript/consistent-type-definitions": ["deny", ["type"]],
   "typescript/consistent-type-exports": "deny",
   "typescript/explicit-function-return-type": "deny",
+  "typescript/no-array-delete": "deny",
+  "typescript/no-base-to-string": "deny",
+  "typescript/no-duplicate-enum-values": "deny",
   "typescript/no-duplicate-type-constituents": "allow",
+  "typescript/no-empty-object-type": "deny",
   "typescript/no-explicit-any": "allow",
+  "typescript/no-extra-non-null-assertion": "deny",
+  "typescript/no-floating-promises": "deny",
+  "typescript/no-for-in-array": "deny",
   "typescript/no-meaningless-void-operator": "deny",
+  "typescript/no-misused-new": "deny",
+  "typescript/no-misused-promises": "deny",
   "typescript/no-namespace": [
     "deny",
     [
@@ -22,22 +35,34 @@
       }
     ]
   ],
+  "typescript/no-non-null-asserted-optional-chain": "deny",
   "typescript/no-non-null-assertion": "deny",
   "typescript/no-redundant-type-constituents": "allow",
+  "typescript/no-require-imports": "deny",
+  "typescript/no-this-alias": "deny",
   "typescript/no-unnecessary-boolean-literal-compare": "deny",
   "typescript/no-unnecessary-qualifier": "deny",
   "typescript/no-unnecessary-type-arguments": "allow",
+  "typescript/no-unnecessary-type-assertion": "deny",
+  "typescript/no-unnecessary-type-constraint": "deny",
   "typescript/no-unsafe-argument": "allow",
   "typescript/no-unsafe-assignment": "allow",
   "typescript/no-unsafe-call": "allow",
+  "typescript/no-unsafe-declaration-merging": "deny",
   "typescript/no-unsafe-enum-comparison": "allow",
+  "typescript/no-unsafe-function-type": "deny",
   "typescript/no-unsafe-member-access": "allow",
   "typescript/no-unsafe-return": "allow",
+  "typescript/no-unsafe-unary-minus": "deny",
+  "typescript/no-wrapper-object-types": "deny",
+  "typescript/only-throw-error": "deny",
   "typescript/parameter-properties": "deny",
+  "typescript/prefer-as-const": "deny",
   "typescript/prefer-enum-initializers": "deny",
   "typescript/prefer-for-of": "deny",
   "typescript/prefer-function-type": "deny",
   "typescript/prefer-includes": "deny",
+  "typescript/prefer-namespace-keyword": "deny",
   "typescript/prefer-nullish-coalescing": "deny",
   "typescript/prefer-optional-chain": "deny",
   "typescript/prefer-promise-reject-errors": [
@@ -53,6 +78,7 @@
   "typescript/prefer-string-starts-ends-with": "deny",
   "typescript/promise-function-async": "deny",
   "typescript/require-await": "allow",
+  "typescript/restrict-plus-operands": "deny",
   "typescript/restrict-template-expressions": [
     "deny",
     [
@@ -70,5 +96,7 @@
       }
     ]
   ],
+  "typescript/triple-slash-reference": "deny",
+  "typescript/unbound-method": "deny",
   "typescript/unified-signatures": "deny"
 }

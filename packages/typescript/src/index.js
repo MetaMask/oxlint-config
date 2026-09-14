@@ -10,16 +10,33 @@ const config = createConfig({
   rules: {
     // Our rules
     'typescript/array-type': 'error',
+    'typescript/ban-ts-comment': 'error',
     'typescript/consistent-type-assertions': 'error',
     'typescript/consistent-type-definitions': ['error', 'type'],
     'typescript/explicit-function-return-type': 'error',
+    'typescript/no-array-delete': 'error',
+    'typescript/no-duplicate-enum-values': 'error',
+    'typescript/no-empty-object-type': 'error',
     'typescript/no-explicit-any': 'off',
+    'typescript/no-extra-non-null-assertion': 'error',
+    'typescript/no-misused-new': 'error',
     'typescript/no-namespace': ['error', { allowDefinitionFiles: true }],
+    'typescript/no-non-null-asserted-optional-chain': 'error',
     'typescript/no-non-null-assertion': 'error',
+    'typescript/no-require-imports': 'error',
+    'typescript/no-this-alias': 'error',
+    'typescript/no-unnecessary-type-constraint': 'error',
+    'typescript/no-unsafe-declaration-merging': 'error',
+    'typescript/no-unsafe-function-type': 'error',
+    'typescript/no-unsafe-unary-minus': 'error',
+    'typescript/no-wrapper-object-types': 'error',
     'typescript/parameter-properties': 'error',
+    'typescript/prefer-as-const': 'error',
     'typescript/prefer-for-of': 'error',
     'typescript/prefer-function-type': 'error',
+    'typescript/prefer-namespace-keyword': 'error',
     'typescript/prefer-optional-chain': 'error',
+    'typescript/triple-slash-reference': 'error',
     'typescript/unified-signatures': 'error',
     'typescript/no-dupe-class-members': 'error',
     'typescript/no-unused-vars': [
@@ -50,10 +67,16 @@ const config = createConfig({
     'typescript/no-unnecessary-type-arguments': 'off',
 
     // Our rules that require type information
+    'typescript/await-thenable': 'error',
     'typescript/consistent-type-exports': 'error',
+    'typescript/no-base-to-string': 'error',
+    'typescript/no-floating-promises': 'error',
+    'typescript/no-for-in-array': 'error',
     'typescript/no-meaningless-void-operator': 'error',
+    'typescript/no-misused-promises': 'error',
     'typescript/no-unnecessary-boolean-literal-compare': 'error',
     'typescript/no-unnecessary-qualifier': 'error',
+    'typescript/no-unnecessary-type-assertion': 'error',
     'typescript/prefer-enum-initializers': 'error',
     'typescript/prefer-includes': 'error',
     'typescript/prefer-nullish-coalescing': 'error',
@@ -65,6 +88,7 @@ const config = createConfig({
     'typescript/prefer-reduce-type-parameter': 'error',
     'typescript/prefer-string-starts-ends-with': 'error',
     'typescript/promise-function-async': 'error',
+    'typescript/restrict-plus-operands': 'error',
     'typescript/restrict-template-expressions': [
       'error',
       {
@@ -78,12 +102,19 @@ const config = createConfig({
         considerDefaultExhaustiveForUnions: true,
       },
     ],
+    'typescript/unbound-method': 'error',
 
     'default-param-last': 'off',
     'typescript/default-param-last': 'error',
 
+    'no-array-constructor': 'off',
+    'typescript/no-array-constructor': 'error',
+
     'no-shadow': 'off',
     'typescript/no-shadow': ['error', { builtinGlobals: true }],
+
+    'no-throw-literal': 'off',
+    'typescript/only-throw-error': 'error',
 
     'typescript/no-unused-expressions': [
       'error',
@@ -97,6 +128,9 @@ const config = createConfig({
     'typescript/no-useless-constructor': 'error',
 
     /* Import plugin rules */
+
+    // TypeScript handles named import validation.
+    'import/named': 'off',
 
     // This rule is too aggressive about combining type and non-type imports,
     // which I'm not sure that we want.
