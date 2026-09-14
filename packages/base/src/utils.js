@@ -11,6 +11,14 @@ import deepmerge from 'deepmerge';
  */
 
 /**
+ * Keys that oxlint only recognises at the top level of a config and must not
+ * appear inside an `overrides` entry. When these keys are introduced by an
+ * extended config that is used inside an override, they are hoisted to the
+ * surrounding config level.
+ */
+const TOP_LEVEL_ONLY_KEYS = ['options'];
+
+/**
  * Get an array from a value. If the value is already an array, it is returned
  * as is. Otherwise, the value is wrapped in an array.
  *
@@ -24,6 +32,30 @@ export function getArray(value) {
   }
 
   return Array.isArray(value) ? value : [value];
+}
+
+/**
+ * Split a resolved config object into top-level-only keys and the remainder.
+ *
+ * @param {Record<string, unknown>} config - The resolved config to split.
+ * @returns {{
+ *   hoisted: Record<string, unknown>;
+ *   rest: Record<string, unknown>;
+ * }}
+ *   The hoisted and remaining config parts.
+ */
+function extractTopLevelOnly(config) {
+  const hoisted = {};
+  const rest = { ...config };
+
+  for (const key of TOP_LEVEL_ONLY_KEYS) {
+    if (Object.prototype.hasOwnProperty.call(rest, key)) {
+      hoisted[key] = rest[key];
+      delete rest[key];
+    }
+  }
+
+  return { hoisted, rest };
 }
 
 /**
@@ -81,16 +113,27 @@ export function getArray(value) {
  *   extended configs merged in.
  */
 export function createConfig(config) {
-  const { extends: baseConfig, overrides, ...extension } = config;
+  const { extends: baseConfig, overrides = [], ...extension } = config;
   const baseConfigs = getArray(baseConfig);
 
-  const resolvedOverrides = overrides?.map((override) =>
-    createConfig(override),
+  const { hoistedFromOverrides, resolvedOverrides } = overrides.reduce(
+    (
+      { hoistedFromOverrides: accumulator, resolvedOverrides: resolved },
+      override,
+    ) => {
+      const { hoisted, rest } = extractTopLevelOnly(createConfig(override));
+      return {
+        hoistedFromOverrides: deepmerge(accumulator, hoisted),
+        resolvedOverrides: [...resolved, rest],
+      };
+    },
+    { hoistedFromOverrides: {}, resolvedOverrides: [] },
   );
 
-  const resolvedExtension = resolvedOverrides
-    ? { ...extension, overrides: resolvedOverrides }
-    : extension;
+  const resolvedExtension =
+    resolvedOverrides.length > 0
+      ? { ...extension, overrides: resolvedOverrides }
+      : extension;
 
   const mergedBaseConfig = baseConfigs.reduce((mergedConfig, currentConfig) => {
     const parsedConfig = createConfig(currentConfig);
@@ -106,5 +149,8 @@ export function createConfig(config) {
     });
   }, {});
 
-  return deepmerge(mergedBaseConfig, resolvedExtension);
+  return deepmerge(
+    deepmerge(mergedBaseConfig, hoistedFromOverrides),
+    resolvedExtension,
+  );
 }

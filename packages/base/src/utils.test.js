@@ -139,6 +139,40 @@ describe('createConfig', () => {
     });
   });
 
+  it('hoists top-level-only keys from extended configs inside overrides', () => {
+    const typescriptConfig = {
+      plugins: ['typescript'],
+      options: { typeAware: true },
+      rules: { 'typescript/no-explicit-any': 'error' },
+    };
+
+    const extension = {
+      rules: { 'no-console': 'error' },
+      overrides: [
+        {
+          files: ['**/*.ts'],
+          extends: typescriptConfig,
+          rules: { 'no-debugger': 'warn' },
+        },
+      ],
+    };
+
+    expect(createConfig(extension)).toStrictEqual({
+      options: { typeAware: true },
+      rules: { 'no-console': 'error' },
+      overrides: [
+        {
+          files: ['**/*.ts'],
+          plugins: ['typescript'],
+          rules: {
+            'typescript/no-explicit-any': 'error',
+            'no-debugger': 'warn',
+          },
+        },
+      ],
+    });
+  });
+
   it('handles nested extends', () => {
     const extension = {
       extends: [
