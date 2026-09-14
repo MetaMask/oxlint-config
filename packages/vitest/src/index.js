@@ -5,6 +5,7 @@ const config = createConfig({
 
   rules: {
     'vitest/consistent-test-it': ['error', { fn: 'it' }],
+    'vitest/expect-expect': 'error',
     'vitest/no-alias-methods': 'error',
     'vitest/no-commented-out-tests': 'error',
     'vitest/no-conditional-expect': 'error',
@@ -12,6 +13,8 @@ const config = createConfig({
     'vitest/no-disabled-tests': 'error',
     'vitest/no-duplicate-hooks': 'error',
     'vitest/no-focused-tests': 'error',
+    'vitest/no-identical-title': 'error',
+    'vitest/no-import-node-test': 'error',
     'vitest/no-interpolation-in-snapshots': 'error',
     'vitest/no-mocks-import': 'error',
     'vitest/no-standalone-expect': 'error',
@@ -25,9 +28,12 @@ const config = createConfig({
     'vitest/prefer-to-contain': 'error',
     'vitest/prefer-to-have-length': 'error',
     'vitest/prefer-todo': 'error',
+    'vitest/require-local-test-context-for-concurrent-snapshots': 'error',
     'vitest/require-to-throw-message': 'error',
     'vitest/require-top-level-describe': 'error',
+    'vitest/valid-describe-callback': 'error',
     'vitest/valid-expect': ['error', { alwaysAwait: true }],
+    'vitest/valid-title': 'error',
     'vitest/no-restricted-matchers': [
       'error',
       {
