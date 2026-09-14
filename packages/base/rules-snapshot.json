@@ -8,8 +8,13 @@
   "default-param-last": "deny",
   "eqeqeq": ["deny", ["smart"]],
   "for-direction": "deny",
+  "func-name-matching": "deny",
   "grouped-accessor-pairs": "deny",
   "guard-for-in": "deny",
+  "id-denylist": [
+    "deny",
+    ["buf", "cat", "err", "cb", "cfg", "hex", "int", "msg", "num", "opt", "sig"]
+  ],
   "id-length": [
     "deny",
     [
@@ -175,6 +180,7 @@
   "no-var": "deny",
   "no-void": "deny",
   "no-with": "deny",
+  "object-shorthand": "deny",
   "operator-assignment": "deny",
   "prefer-const": "deny",
   "prefer-destructuring": [
@@ -197,10 +203,12 @@
   ],
   "prefer-numeric-literals": "deny",
   "prefer-promise-reject-errors": "deny",
+  "prefer-regex-literals": "deny",
   "prefer-rest-params": "deny",
   "prefer-spread": "deny",
   "prefer-template": "deny",
   "radix": "deny",
+  "require-unicode-regexp": "deny",
   "require-yield": "deny",
   "symbol-description": "deny",
   "use-isnan": "deny",
