@@ -24,6 +24,7 @@ export default defineConfig({
     'eslint/eqeqeq': ['error', 'smart'],
     'eslint/for-direction': 'error',
     'eslint/func-name-matching': 'error',
+    'eslint/getter-return': 'error',
     'eslint/grouped-accessor-pairs': 'error',
     'eslint/guard-for-in': 'error',
     'eslint/id-denylist': [
@@ -63,6 +64,7 @@ export default defineConfig({
     'eslint/no-async-promise-executor': 'error',
     'eslint/no-bitwise': 'error',
     'eslint/no-caller': 'error',
+    'eslint/no-case-declarations': 'error',
     'eslint/no-class-assign': 'error',
     'eslint/no-compare-neg-zero': 'error',
     'eslint/no-cond-assign': 'error',
@@ -79,6 +81,7 @@ export default defineConfig({
     'eslint/no-dupe-keys': 'error',
     'eslint/no-duplicate-case': 'error',
     'eslint/no-else-return': 'error',
+    'eslint/no-empty': 'error',
     'eslint/no-empty-character-class': 'error',
     'eslint/no-empty-function': 'error',
     'eslint/no-empty-pattern': 'error',
@@ -90,14 +93,17 @@ export default defineConfig({
     'eslint/no-extra-bind': 'error',
     'eslint/no-extra-boolean-cast': 'error',
     'eslint/no-extra-label': 'error',
+    'eslint/no-fallthrough': 'error',
     'eslint/no-func-assign': 'error',
     'eslint/no-global-assign': 'error',
     'eslint/no-implicit-coercion': 'error',
+    'eslint/no-implied-eval': 'error',
     'eslint/no-import-assign': 'error',
     'eslint/no-inner-declarations': ['error', 'functions'],
     'eslint/no-invalid-regexp': 'error',
     'eslint/no-irregular-whitespace': 'error',
     'eslint/no-iterator': 'error',
+    'eslint/no-label-var': 'error',
     'eslint/no-labels': [
       'error',
       {
@@ -120,6 +126,7 @@ export default defineConfig({
     'eslint/no-new-wrappers': 'error',
     'eslint/no-nonoctal-decimal-escape': 'error',
     'eslint/no-obj-calls': 'error',
+    'eslint/no-object-constructor': 'error',
     'eslint/no-param-reassign': 'error',
     'eslint/no-plusplus': [
       'error',
@@ -128,6 +135,9 @@ export default defineConfig({
       },
     ],
     'eslint/no-proto': 'error',
+    'eslint/no-prototype-builtins': 'error',
+    'eslint/no-redeclare': 'error',
+    'eslint/no-regex-spaces': 'error',
     'eslint/no-return-assign': ['error', 'except-parens'],
     'eslint/no-script-url': 'error',
     'eslint/no-self-assign': 'error',
@@ -140,6 +150,7 @@ export default defineConfig({
     'eslint/no-this-before-super': 'error',
     'eslint/no-throw-literal': 'error',
     'eslint/no-unassigned-vars': 'error',
+    'eslint/no-undef': 'error',
     'eslint/no-unmodified-loop-condition': 'error',
     'eslint/no-unneeded-ternary': [
       'error',
@@ -147,6 +158,7 @@ export default defineConfig({
         defaultAssignment: false,
       },
     ],
+    'eslint/no-unreachable': 'error',
     'eslint/no-unsafe-finally': 'error',
     'eslint/no-unsafe-negation': 'error',
     'eslint/no-unsafe-optional-chaining': 'error',
@@ -158,6 +170,7 @@ export default defineConfig({
       },
     ],
     'eslint/no-unused-labels': 'error',
+    'eslint/no-unused-private-class-members': 'error',
     'eslint/no-unused-vars': [
       'error',
       {
@@ -186,6 +199,7 @@ export default defineConfig({
     'eslint/no-void': 'error',
     'eslint/no-with': 'error',
     'eslint/object-shorthand': 'error',
+    'eslint/one-var': ['error', { initialized: 'never' }],
     'eslint/operator-assignment': 'error',
     'eslint/prefer-const': 'error',
     'eslint/prefer-destructuring': [
@@ -219,6 +233,8 @@ export default defineConfig({
     'eslint/yoda': ['error', 'never'],
 
     // Import rules.
+    'import/default': 'error',
+    'import/export': 'error',
     'import/extensions': [
       'error',
       'ignorePackages',
@@ -227,6 +243,9 @@ export default defineConfig({
       },
     ],
     'import/first': 'error',
+    'import/named': 'error',
+    'import/namespace': 'error',
+    'import/newline-after-import': 'error',
     'import/no-absolute-path': 'error',
     'import/no-amd': 'error',
     'import/no-anonymous-default-export': 'error',

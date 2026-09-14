@@ -9,6 +9,7 @@
   "eqeqeq": ["deny", ["smart"]],
   "for-direction": "deny",
   "func-name-matching": "deny",
+  "getter-return": "deny",
   "grouped-accessor-pairs": "deny",
   "guard-for-in": "deny",
   "id-denylist": [
@@ -39,6 +40,7 @@
   "no-async-promise-executor": "deny",
   "no-bitwise": "deny",
   "no-caller": "deny",
+  "no-case-declarations": "deny",
   "no-class-assign": "deny",
   "no-compare-neg-zero": "deny",
   "no-cond-assign": "deny",
@@ -55,6 +57,7 @@
   "no-dupe-keys": "deny",
   "no-duplicate-case": "deny",
   "no-else-return": "deny",
+  "no-empty": "deny",
   "no-empty-character-class": "deny",
   "no-empty-function": "deny",
   "no-empty-pattern": "deny",
@@ -66,14 +69,17 @@
   "no-extra-bind": "deny",
   "no-extra-boolean-cast": "deny",
   "no-extra-label": "deny",
+  "no-fallthrough": "deny",
   "no-func-assign": "deny",
   "no-global-assign": "deny",
   "no-implicit-coercion": "deny",
+  "no-implied-eval": "deny",
   "no-import-assign": "deny",
   "no-inner-declarations": ["deny", ["functions"]],
   "no-invalid-regexp": "deny",
   "no-irregular-whitespace": "deny",
   "no-iterator": "deny",
+  "no-label-var": "deny",
   "no-labels": [
     "deny",
     [
@@ -98,6 +104,7 @@
   "no-new-wrappers": "deny",
   "no-nonoctal-decimal-escape": "deny",
   "no-obj-calls": "deny",
+  "no-object-constructor": "deny",
   "no-param-reassign": "deny",
   "no-plusplus": [
     "deny",
@@ -108,6 +115,9 @@
     ]
   ],
   "no-proto": "deny",
+  "no-prototype-builtins": "deny",
+  "no-redeclare": "deny",
+  "no-regex-spaces": "deny",
   "no-return-assign": ["deny", ["except-parens"]],
   "no-script-url": "deny",
   "no-self-assign": "deny",
@@ -127,6 +137,7 @@
   "no-this-before-super": "deny",
   "no-throw-literal": "deny",
   "no-unassigned-vars": "deny",
+  "no-undef": "deny",
   "no-unmodified-loop-condition": "deny",
   "no-unneeded-ternary": [
     "deny",
@@ -136,6 +147,7 @@
       }
     ]
   ],
+  "no-unreachable": "deny",
   "no-unsafe-finally": "deny",
   "no-unsafe-negation": "deny",
   "no-unsafe-optional-chaining": "deny",
@@ -149,6 +161,7 @@
     ]
   ],
   "no-unused-labels": "deny",
+  "no-unused-private-class-members": "deny",
   "no-unused-vars": [
     "deny",
     [
@@ -181,6 +194,14 @@
   "no-void": "deny",
   "no-with": "deny",
   "object-shorthand": "deny",
+  "one-var": [
+    "deny",
+    [
+      {
+        "initialized": "never"
+      }
+    ]
+  ],
   "operator-assignment": "deny",
   "prefer-const": "deny",
   "prefer-destructuring": [
@@ -214,6 +235,8 @@
   "use-isnan": "deny",
   "valid-typeof": "deny",
   "yoda": ["deny", ["never"]],
+  "import/default": "deny",
+  "import/export": "deny",
   "import/extensions": [
     "deny",
     [
@@ -224,6 +247,9 @@
     ]
   ],
   "import/first": "deny",
+  "import/named": "deny",
+  "import/namespace": "deny",
+  "import/newline-after-import": "deny",
   "import/no-absolute-path": "deny",
   "import/no-amd": "deny",
   "import/no-anonymous-default-export": "deny",
