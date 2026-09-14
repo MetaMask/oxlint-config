@@ -3,9 +3,11 @@
   "node/exports-style": "deny",
   "node/global-require": "deny",
   "node/handle-callback-err": ["deny", ["^(err|error)$"]],
+  "node/no-exports-assign": "deny",
   "node/no-mixed-requires": "deny",
   "node/no-new-require": "deny",
   "node/no-path-concat": "deny",
   "node/no-process-env": "deny",
-  "node/no-sync": "deny"
+  "node/no-sync": "deny",
+  "unicorn/no-process-exit": "deny"
 }

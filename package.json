@@ -32,6 +32,7 @@
     "@metamask/oxlint-config-vitest": "^0.0.0",
     "@types/node": "^22.5.5",
     "depcheck": "^1.4.7",
+    "eslint-plugin-n": "^18.3.0",
     "oxfmt": "^0.67.0",
     "oxlint": "^1.82.0",
     "typescript": "^5.9.3",
