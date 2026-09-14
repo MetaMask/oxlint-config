@@ -4,4 +4,8 @@ import browser from './src/index.js';
 
 export default createConfig({
   extends: [browser],
+
+  categories: {
+    correctness: 'allow',
+  },
 });

@@ -4,4 +4,8 @@ import vitest from './src/index.js';
 
 export default createConfig({
   extends: [vitest],
+
+  categories: {
+    correctness: 'allow',
+  },
 });

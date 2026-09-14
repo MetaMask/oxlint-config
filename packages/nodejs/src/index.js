@@ -3,10 +3,6 @@ import { createConfig } from '@metamask/oxlint-config';
 const config = createConfig({
   plugins: ['node'],
 
-  categories: {
-    correctness: 'allow',
-  },
-
   rules: {
     // Possible Errors
     'node/handle-callback-err': ['error', '^(err|error)$'],

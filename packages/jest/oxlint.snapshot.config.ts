@@ -4,4 +4,8 @@ import jest from './src/index.js';
 
 export default createConfig({
   extends: [jest],
+
+  categories: {
+    correctness: 'allow',
+  },
 });

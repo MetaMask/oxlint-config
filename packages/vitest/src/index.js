@@ -3,10 +3,6 @@ import { createConfig } from '@metamask/oxlint-config';
 const config = createConfig({
   plugins: ['vitest'],
 
-  categories: {
-    correctness: 'allow',
-  },
-
   rules: {
     'vitest/consistent-test-it': ['error', { fn: 'it' }],
     'vitest/no-alias-methods': 'error',
