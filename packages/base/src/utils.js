@@ -37,10 +37,10 @@ export function getArray(value) {
 /**
  * Split a resolved config object into top-level-only keys and the remainder.
  *
- * @param {Record<string, unknown>} config - The resolved config to split.
+ * @param {Partial<OxlintConfig>} config - The resolved config to split.
  * @returns {{
- *   hoisted: Record<string, unknown>;
- *   rest: Record<string, unknown>;
+ *   hoisted: Partial<OxlintConfig>;
+ *   rest: Partial<OxlintConfig>;
  * }}
  *   The hoisted and remaining config parts.
  */
@@ -116,7 +116,13 @@ export function createConfig(config) {
   const { extends: baseConfig, overrides = [], ...extension } = config;
   const baseConfigs = getArray(baseConfig);
 
-  const { hoistedFromOverrides, resolvedOverrides } = overrides.reduce(
+  /**
+   * @type {{
+   *   hoistedFromOverrides: OxlintConfig;
+   *   resolvedOverrides: OxlintConfig[];
+   * }}
+   */
+  const result = overrides.reduce(
     (
       { hoistedFromOverrides: accumulator, resolvedOverrides: resolved },
       override,
@@ -130,6 +136,7 @@ export function createConfig(config) {
     { hoistedFromOverrides: {}, resolvedOverrides: [] },
   );
 
+  const { hoistedFromOverrides, resolvedOverrides } = result;
   const resolvedExtension =
     resolvedOverrides.length > 0
       ? { ...extension, overrides: resolvedOverrides }
