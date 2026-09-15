@@ -8,37 +8,49 @@ const config = createConfig({
   },
 
   rules: {
-    // Our rules
     'typescript/array-type': 'error',
+    'typescript/await-thenable': 'error',
     'typescript/ban-ts-comment': 'error',
     'typescript/consistent-type-assertions': 'error',
     'typescript/consistent-type-definitions': ['error', 'type'],
+    'typescript/consistent-type-exports': 'error',
+    'typescript/default-param-last': 'error',
     'typescript/explicit-function-return-type': 'error',
+    'typescript/no-array-constructor': 'error',
     'typescript/no-array-delete': 'error',
+    'typescript/no-base-to-string': 'error',
+    'typescript/no-dupe-class-members': 'error',
     'typescript/no-duplicate-enum-values': 'error',
     'typescript/no-empty-object-type': 'error',
     'typescript/no-explicit-any': 'error',
     'typescript/no-extra-non-null-assertion': 'error',
+    'typescript/no-floating-promises': 'error',
+    'typescript/no-for-in-array': 'error',
+    'typescript/no-meaningless-void-operator': 'error',
     'typescript/no-misused-new': 'error',
+    'typescript/no-misused-promises': 'error',
     'typescript/no-namespace': ['error', { allowDefinitionFiles: true }],
     'typescript/no-non-null-asserted-optional-chain': 'error',
     'typescript/no-non-null-assertion': 'error',
     'typescript/no-require-imports': 'error',
+    'typescript/no-shadow': ['error', { builtinGlobals: true }],
     'typescript/no-this-alias': 'error',
+    'typescript/no-unnecessary-boolean-literal-compare': 'error',
+    'typescript/no-unnecessary-qualifier': 'error',
+    'typescript/no-unnecessary-type-assertion': 'error',
     'typescript/no-unnecessary-type-constraint': 'error',
+    'typescript/no-unsafe-argument': 'error',
+    'typescript/no-unsafe-assignment': 'error',
+    'typescript/no-unsafe-call': 'error',
     'typescript/no-unsafe-declaration-merging': 'error',
     'typescript/no-unsafe-function-type': 'error',
+    'typescript/no-unsafe-member-access': 'error',
+    'typescript/no-unsafe-return': 'error',
     'typescript/no-unsafe-unary-minus': 'error',
-    'typescript/no-wrapper-object-types': 'error',
-    'typescript/parameter-properties': 'error',
-    'typescript/prefer-as-const': 'error',
-    'typescript/prefer-for-of': 'error',
-    'typescript/prefer-function-type': 'error',
-    'typescript/prefer-namespace-keyword': 'error',
-    'typescript/prefer-optional-chain': 'error',
-    'typescript/triple-slash-reference': 'error',
-    'typescript/unified-signatures': 'error',
-    'typescript/no-dupe-class-members': 'error',
+    'typescript/no-unused-expressions': [
+      'error',
+      { allowShortCircuit: true, allowTernary: true },
+    ],
     'typescript/no-unused-vars': [
       'error',
       {
@@ -48,38 +60,19 @@ const config = createConfig({
         ignoreRestSiblings: true,
       },
     ],
-
-    // Recommended rules that require type information
-    'typescript/no-unsafe-argument': 'off',
-    'typescript/no-unsafe-assignment': 'off',
-    'typescript/no-unsafe-call': 'off',
-    'typescript/no-unsafe-member-access': 'off',
-    'typescript/no-unsafe-return': 'off',
-
-    // Recommended rules that we do not want to use
-    'typescript/no-duplicate-type-constituents': 'off',
-    'typescript/no-redundant-type-constituents': 'off',
-    'typescript/no-unsafe-enum-comparison': 'off',
-    'typescript/require-await': 'off',
-
-    // Disabled because unnecessary type arguments are sometimes helpful for
-    // readability
-    'typescript/no-unnecessary-type-arguments': 'off',
-
-    // Our rules that require type information
-    'typescript/await-thenable': 'error',
-    'typescript/consistent-type-exports': 'error',
-    'typescript/no-base-to-string': 'error',
-    'typescript/no-floating-promises': 'error',
-    'typescript/no-for-in-array': 'error',
-    'typescript/no-meaningless-void-operator': 'error',
-    'typescript/no-misused-promises': 'error',
-    'typescript/no-unnecessary-boolean-literal-compare': 'error',
-    'typescript/no-unnecessary-qualifier': 'error',
-    'typescript/no-unnecessary-type-assertion': 'error',
+    'typescript/no-use-before-define': ['error', { functions: false }],
+    'typescript/no-useless-constructor': 'error',
+    'typescript/no-wrapper-object-types': 'error',
+    'typescript/only-throw-error': 'error',
+    'typescript/parameter-properties': 'error',
+    'typescript/prefer-as-const': 'error',
     'typescript/prefer-enum-initializers': 'error',
+    'typescript/prefer-for-of': 'error',
+    'typescript/prefer-function-type': 'error',
     'typescript/prefer-includes': 'error',
+    'typescript/prefer-namespace-keyword': 'error',
     'typescript/prefer-nullish-coalescing': 'error',
+    'typescript/prefer-optional-chain': 'error',
     'typescript/prefer-promise-reject-errors': [
       'error',
       { allowThrowingUnknown: true },
@@ -102,30 +95,9 @@ const config = createConfig({
         considerDefaultExhaustiveForUnions: true,
       },
     ],
+    'typescript/triple-slash-reference': 'error',
     'typescript/unbound-method': 'error',
-
-    'default-param-last': 'off',
-    'typescript/default-param-last': 'error',
-
-    'no-array-constructor': 'off',
-    'typescript/no-array-constructor': 'error',
-
-    'no-shadow': 'off',
-    'typescript/no-shadow': ['error', { builtinGlobals: true }],
-
-    'no-throw-literal': 'off',
-    'typescript/only-throw-error': 'error',
-
-    'typescript/no-unused-expressions': [
-      'error',
-      { allowShortCircuit: true, allowTernary: true },
-    ],
-
-    'no-use-before-define': 'off',
-    'typescript/no-use-before-define': ['error', { functions: false }],
-
-    'no-useless-constructor': 'off',
-    'typescript/no-useless-constructor': 'error',
+    'typescript/unified-signatures': 'error',
 
     /* Import plugin rules */
 
@@ -153,7 +125,8 @@ const config = createConfig({
 
     /* Promise plugin rules */
 
-    // TypeScript already validates Promise params, no need to validate them twice
+    // TypeScript already validates Promise params, no need to validate them
+    // twice.
     'promise/valid-params': 'off',
   },
 });
