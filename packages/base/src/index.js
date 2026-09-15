@@ -3,7 +3,7 @@
 import { defineConfig } from 'oxlint';
 
 export default defineConfig({
-  plugins: ['eslint', 'import', 'jsdoc', 'promise'],
+  plugins: ['eslint', 'import', 'jsdoc', 'promise', 'unicorn'],
 
   categories: {
     correctness: 'allow',
@@ -300,6 +300,10 @@ export default defineConfig({
       },
     ],
     'promise/valid-params': 'error',
+
+    // Unicorn rules.
+    'unicorn/no-new-buffer': 'error',
+    'unicorn/no-useless-undefined': 'error',
   },
 });
 

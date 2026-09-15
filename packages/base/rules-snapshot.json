@@ -303,5 +303,7 @@
       }
     ]
   ],
-  "promise/valid-params": "deny"
+  "promise/valid-params": "deny",
+  "unicorn/no-new-buffer": "deny",
+  "unicorn/no-useless-undefined": "deny"
 }
