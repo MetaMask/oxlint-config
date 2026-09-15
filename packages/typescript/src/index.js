@@ -17,7 +17,7 @@ const config = createConfig({
     'typescript/no-array-delete': 'error',
     'typescript/no-duplicate-enum-values': 'error',
     'typescript/no-empty-object-type': 'error',
-    'typescript/no-explicit-any': 'off',
+    'typescript/no-explicit-any': 'error',
     'typescript/no-extra-non-null-assertion': 'error',
     'typescript/no-misused-new': 'error',
     'typescript/no-namespace': ['error', { allowDefinitionFiles: true }],
