@@ -51,6 +51,10 @@ const config = createConfig({
           'Use `toThrowErrorMatchingInlineSnapshot()` instead',
       },
     ],
+
+    // This can cause a lot of errors in tests, and unfortunately Oxlint doesn't
+    // have a Jest-specific replacement for this yet.
+    'typescript/unbound-method': 'off',
   },
 });
 
