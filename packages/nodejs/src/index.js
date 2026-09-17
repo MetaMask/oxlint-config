@@ -7,6 +7,10 @@ const config = createConfig({
   // natively implemented in Oxlint.
   jsPlugins: ['eslint-plugin-n'],
 
+  env: {
+    node: true,
+  },
+
   rules: {
     // Possible Errors
     'node/handle-callback-err': ['error', '^(err|error)$'],
