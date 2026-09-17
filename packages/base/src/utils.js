@@ -50,7 +50,7 @@ function extractTopLevelOnly(config) {
 
   for (const key of TOP_LEVEL_ONLY_KEYS) {
     if (Object.prototype.hasOwnProperty.call(rest, key)) {
-      hoisted[key] = rest[key];
+      hoisted[key] = /** @type {unknown} */ (rest[key]);
       delete rest[key];
     }
   }
@@ -116,13 +116,24 @@ export function createConfig(config) {
   const { extends: baseConfig, overrides = [], ...extension } = config;
   const baseConfigs = getArray(baseConfig);
 
-  /**
-   * @type {{
-   *   hoistedFromOverrides: OxlintConfig;
-   *   resolvedOverrides: OxlintConfig[];
-   * }}
-   */
   const result = overrides.reduce(
+    /**
+     * Reducer that processes each override, extracts its top-level-only keys
+     * into `hoistedFromOverrides`, and accumulates the remaining config in
+     * `resolvedOverrides`.
+     *
+     * @param {{
+     *   hoistedFromOverrides: OxlintConfig;
+     *   resolvedOverrides: OxlintConfig[];
+     * }} options
+     *   - The accumulated result from previous iterations.
+     * @param {OxlintConfig} override - The current override config to process.
+     * @returns {{
+     *   hoistedFromOverrides: OxlintConfig;
+     *   resolvedOverrides: OxlintConfig[];
+     * }}
+     *   The updated accumulator with the override merged in.
+     */
     (
       { hoistedFromOverrides: accumulator, resolvedOverrides: resolved },
       override,
@@ -142,19 +153,42 @@ export function createConfig(config) {
       ? { ...extension, overrides: resolvedOverrides }
       : extension;
 
-  const mergedBaseConfig = baseConfigs.reduce((mergedConfig, currentConfig) => {
-    const parsedConfig = createConfig(currentConfig);
+  const mergedBaseConfig = baseConfigs.reduce(
+    /**
+     * Reducer that merges each resolved base config into the accumulator using
+     * `deepmerge`.
+     *
+     * @param {OxlintConfig} mergedConfig - The accumulated merged config.
+     * @param {OxlintConfig} currentConfig - The current base config to merge
+     *   in.
+     * @returns {OxlintConfig} The merged config.
+     */
+    (mergedConfig, currentConfig) => {
+      const parsedConfig = createConfig(currentConfig);
 
-    return deepmerge(mergedConfig, parsedConfig, {
-      arrayMerge(target, source, options) {
-        if (options?.isMergeableObject) {
-          return [...new Set([...target, ...source])];
-        }
+      return deepmerge(mergedConfig, parsedConfig, {
+        /**
+         * Merge arrays by concatenating them and removing duplicates.
+         *
+         * @template Target
+         * @template Source
+         * @param {Target[]} target - The target array.
+         * @param {Source[]} source - The source array.
+         * @param {deepmerge.ArrayMergeOptions} options - Options for performing
+         *   the merge.
+         * @returns {(Source & Target)[]} The result of the merge.
+         */
+        arrayMerge(target, source, options) {
+          if (options?.isMergeableObject) {
+            return [...new Set([...target, ...source])];
+          }
 
-        return source;
-      },
-    });
-  }, {});
+          return source;
+        },
+      });
+    },
+    {},
+  );
 
   return deepmerge(
     deepmerge(mergedBaseConfig, hoistedFromOverrides),
