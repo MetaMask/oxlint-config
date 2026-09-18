@@ -21,7 +21,7 @@ export default defineConfig({
     'eslint/curly': ['error', 'all'],
     'eslint/default-case': 'error',
     'eslint/default-param-last': 'error',
-    'eslint/eqeqeq': ['error', 'smart'],
+    'eslint/eqeqeq': ['error', 'always', { null: 'ignore' }],
     'eslint/for-direction': 'error',
     'eslint/func-name-matching': 'error',
     'eslint/getter-return': 'error',

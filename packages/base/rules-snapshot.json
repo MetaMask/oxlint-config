@@ -6,7 +6,15 @@
   "curly": ["deny", ["all"]],
   "default-case": "deny",
   "default-param-last": "deny",
-  "eqeqeq": ["deny", ["smart"]],
+  "eqeqeq": [
+    "deny",
+    [
+      "always",
+      {
+        "null": "ignore"
+      }
+    ]
+  ],
   "for-direction": "deny",
   "func-name-matching": "deny",
   "getter-return": "deny",
