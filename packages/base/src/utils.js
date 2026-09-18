@@ -10,7 +10,7 @@ import deepmerge from 'deepmerge';
  * extended config that is used inside an override, they are hoisted to the
  * surrounding config level.
  */
-const TOP_LEVEL_ONLY_KEYS = ['options'];
+const TOP_LEVEL_ONLY_KEYS = ['options', 'overrides'];
 
 /**
  * Get an array from a value. If the value is already an array, it is returned
@@ -216,8 +216,13 @@ export function createConfig(config) {
   const [topLevelOnlyOptions, overridesWithoutTopLevelOnlyOptions] =
     hoistTopLevelOnlyOptions(overrides);
 
-  return deepmerge(deepmerge(mergedBaseConfig, topLevelOnlyOptions), {
-    ...configWithoutExtendsOrOverrides,
-    overrides: overridesWithoutTopLevelOnlyOptions,
-  });
+  const extension =
+    overridesWithoutTopLevelOnlyOptions.length > 0
+      ? {
+          ...configWithoutExtendsOrOverrides,
+          overrides: overridesWithoutTopLevelOnlyOptions,
+        }
+      : configWithoutExtendsOrOverrides;
+
+  return deepmerge(deepmerge(mergedBaseConfig, topLevelOnlyOptions), extension);
 }

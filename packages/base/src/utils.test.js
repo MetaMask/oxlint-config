@@ -5,25 +5,19 @@ import { createConfig } from './utils.js';
 describe('createConfig', () => {
   it('returns the same config if there are no extends', () => {
     const config = { rules: { 'no-console': 'error' } };
-    expect(createConfig(config)).toStrictEqual({
-      ...config,
-      overrides: [],
-    });
+    expect(createConfig(config)).toStrictEqual(config);
   });
 
   it('extends a single config', () => {
     const baseConfig = { rules: { 'no-console': 'error' } };
     const extension = { extends: baseConfig, rules: { 'no-alert': 'warn' } };
 
-    const expectedConfig = {
-      overrides: [],
+    expect(createConfig(extension)).toStrictEqual({
       rules: {
         'no-console': 'error',
         'no-alert': 'warn',
       },
-    };
-
-    expect(createConfig(extension)).toStrictEqual(expectedConfig);
+    });
   });
 
   it('extends multiple configs', () => {
@@ -47,7 +41,6 @@ describe('createConfig', () => {
     };
 
     expect(createConfig(extension)).toStrictEqual({
-      overrides: [],
       plugins: ['foo', 'bar'],
       rules: {
         'no-foo': 'warn',
@@ -76,7 +69,6 @@ describe('createConfig', () => {
     };
 
     expect(createConfig(extension)).toStrictEqual({
-      overrides: [],
       plugins: ['foo', 'bar', 'baz'],
       rules: {
         'no-foo': 'error',
@@ -106,7 +98,6 @@ describe('createConfig', () => {
       rules: { 'no-console': 'error' },
       overrides: [
         {
-          overrides: [],
           files: ['**/*.ts'],
           plugins: ['typescript'],
           rules: {
@@ -138,7 +129,6 @@ describe('createConfig', () => {
       rules: { 'no-console': 'error' },
       overrides: [
         {
-          overrides: [],
           files: ['**/*.ts'],
           plugins: ['typescript'],
           rules: { '@typescript-eslint/no-explicit-any': 'error' },
@@ -170,13 +160,48 @@ describe('createConfig', () => {
       rules: { 'no-console': 'error' },
       overrides: [
         {
-          overrides: [],
           files: ['**/*.ts'],
           plugins: ['typescript'],
           rules: {
             'typescript/no-explicit-any': 'error',
             'no-debugger': 'warn',
           },
+        },
+      ],
+    });
+  });
+
+  it('flattens overrides nested inside overrides', () => {
+    const baseConfig = {
+      plugins: ['foo'],
+      overrides: [
+        {
+          files: ['src/**'],
+          rules: { 'no-foo': 'error' },
+        },
+      ],
+    };
+
+    const extension = {
+      overrides: [
+        {
+          files: ['**/*.ts'],
+          extends: baseConfig,
+          rules: { 'no-debugger': 'warn' },
+        },
+      ],
+    };
+
+    expect(createConfig(extension)).toStrictEqual({
+      overrides: [
+        {
+          files: ['src/**'],
+          rules: { 'no-foo': 'error' },
+        },
+        {
+          files: ['**/*.ts'],
+          plugins: ['foo'],
+          rules: { 'no-debugger': 'warn' },
         },
       ],
     });
@@ -207,7 +232,6 @@ describe('createConfig', () => {
     };
 
     expect(createConfig(extension)).toStrictEqual({
-      overrides: [],
       plugins: ['foo', 'bar'],
       rules: {
         'no-foo': 'error',
