@@ -156,8 +156,8 @@ function hoistTopLevelOnlyOptions(overrides) {
  * This function handles merging multiple configs together specified in the
  * `extends` property of the input config. It recursively resolves any nested
  * `extends` properties in the base configs as well. Oxlint by default only
- * merges the `rules` and `plugins` properties of the configs, but this function
- * can be used to merge any properties of the configs.
+ * merges the `rules`, `plugins`, and `overrides` properties of the configs, but
+ * this function can be used to merge any properties of the configs.
  *
  * @example <caption>Extending a single config</caption>
  *   import { createConfig } from '@metamask/oxlint-config';

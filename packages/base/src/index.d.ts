@@ -4,7 +4,7 @@ import type { OxlintConfig, OxlintOverride } from 'oxlint';
  * An Oxlint config override that can be extended with an "extends" property.
  */
 type ExtendableOxlintOverride = OxlintOverride & {
-  extends?: Partial<OxlintOverride>[];
+  extends?: Partial<ExtendableOxlintOverride>[];
 };
 
 /**
@@ -25,7 +25,7 @@ type ExtendableOxlintConfig = OxlintConfig & {
  */
 export function createConfig(
   options: Partial<ExtendableOxlintConfig>,
-): OxlintConfig;
+): Omit<OxlintConfig, 'extends'>;
 
 declare const config: OxlintConfig;
 export default config;
