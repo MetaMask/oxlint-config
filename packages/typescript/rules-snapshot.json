@@ -21,6 +21,7 @@
   "typescript/no-extra-non-null-assertion": "deny",
   "typescript/no-floating-promises": "deny",
   "typescript/no-for-in-array": "deny",
+  "typescript/no-implied-eval": "deny",
   "typescript/no-meaningless-void-operator": "deny",
   "typescript/no-misused-new": "deny",
   "typescript/no-misused-promises": "deny",
