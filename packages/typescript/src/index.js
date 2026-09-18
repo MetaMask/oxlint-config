@@ -1,7 +1,7 @@
 import { createConfig } from '@metamask/oxlint-config';
 
 const config = createConfig({
-  plugins: ['typescript'],
+  plugins: ['typescript', 'import', 'jsdoc', 'promise'],
 
   options: {
     typeAware: true,
@@ -14,12 +14,9 @@ const config = createConfig({
     'typescript/consistent-type-assertions': 'error',
     'typescript/consistent-type-definitions': ['error', 'type'],
     'typescript/consistent-type-exports': 'error',
-    'typescript/default-param-last': 'error',
     'typescript/explicit-function-return-type': 'error',
-    'typescript/no-array-constructor': 'error',
     'typescript/no-array-delete': 'error',
     'typescript/no-base-to-string': 'error',
-    'typescript/no-dupe-class-members': 'error',
     'typescript/no-duplicate-enum-values': 'error',
     'typescript/no-empty-object-type': 'error',
     'typescript/no-explicit-any': 'error',
@@ -33,7 +30,6 @@ const config = createConfig({
     'typescript/no-non-null-asserted-optional-chain': 'error',
     'typescript/no-non-null-assertion': 'error',
     'typescript/no-require-imports': 'error',
-    'typescript/no-shadow': ['error', { builtinGlobals: true }],
     'typescript/no-this-alias': 'error',
     'typescript/no-unnecessary-boolean-literal-compare': 'error',
     'typescript/no-unnecessary-qualifier': 'error',
@@ -47,21 +43,6 @@ const config = createConfig({
     'typescript/no-unsafe-member-access': 'error',
     'typescript/no-unsafe-return': 'error',
     'typescript/no-unsafe-unary-minus': 'error',
-    'typescript/no-unused-expressions': [
-      'error',
-      { allowShortCircuit: true, allowTernary: true },
-    ],
-    'typescript/no-unused-vars': [
-      'error',
-      {
-        vars: 'all',
-        args: 'all',
-        argsIgnorePattern: '[_]+',
-        ignoreRestSiblings: true,
-      },
-    ],
-    'typescript/no-use-before-define': ['error', { functions: false }],
-    'typescript/no-useless-constructor': 'error',
     'typescript/no-wrapper-object-types': 'error',
     'typescript/only-throw-error': 'error',
     'typescript/parameter-properties': 'error',
