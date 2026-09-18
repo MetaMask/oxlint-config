@@ -10,8 +10,17 @@
   "jest/expect-expect": "deny",
   "jest/no-alias-methods": "deny",
   "jest/no-commented-out-tests": "deny",
+  "jest/no-conditional-expect": "deny",
+  "jest/no-deprecated-functions": "deny",
   "jest/no-disabled-tests": "deny",
+  "jest/no-done-callback": "deny",
   "jest/no-duplicate-hooks": "deny",
+  "jest/no-export": "deny",
+  "jest/no-focused-tests": "deny",
+  "jest/no-identical-title": "deny",
+  "jest/no-interpolation-in-snapshots": "deny",
+  "jest/no-jasmine-globals": "deny",
+  "jest/no-mocks-import": "deny",
   "jest/no-restricted-matchers": [
     "deny",
     [
@@ -24,6 +33,8 @@
       }
     ]
   ],
+  "jest/no-standalone-expect": "deny",
+  "jest/no-test-prefixes": "deny",
   "jest/no-test-return-statement": "deny",
   "jest/prefer-hooks-on-top": "deny",
   "jest/prefer-lowercase-title": [
@@ -36,9 +47,13 @@
   ],
   "jest/prefer-spy-on": "deny",
   "jest/prefer-strict-equal": "deny",
+  "jest/prefer-to-be": "deny",
+  "jest/prefer-to-contain": "deny",
+  "jest/prefer-to-have-length": "deny",
   "jest/prefer-todo": "deny",
   "jest/require-to-throw-message": "deny",
   "jest/require-top-level-describe": "deny",
+  "jest/valid-describe-callback": "deny",
   "jest/valid-expect": [
     "deny",
     [
@@ -46,5 +61,7 @@
         "alwaysAwait": true
       }
     ]
-  ]
+  ],
+  "jest/valid-expect-in-promise": "deny",
+  "jest/valid-title": "deny"
 }
