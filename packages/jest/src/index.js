@@ -3,10 +3,6 @@ import { createConfig } from '@metamask/oxlint-config';
 const config = createConfig({
   plugins: ['jest'],
 
-  categories: {
-    correctness: 'allow',
-  },
-
   env: {
     jest: true,
   },

@@ -4,4 +4,8 @@ import nodejs from './src/index.js';
 
 export default createConfig({
   extends: [nodejs],
+
+  categories: {
+    correctness: 'allow',
+  },
 });

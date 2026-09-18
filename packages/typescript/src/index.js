@@ -3,10 +3,6 @@ import { createConfig } from '@metamask/oxlint-config';
 const config = createConfig({
   plugins: ['typescript'],
 
-  categories: {
-    correctness: 'allow',
-  },
-
   options: {
     typeAware: true,
   },
