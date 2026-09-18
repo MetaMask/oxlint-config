@@ -5,12 +5,6 @@ import deepmerge from 'deepmerge';
  */
 
 /**
- * @typedef {import('eslint').Linter.Config} Config
- *
- * @typedef {Config & { extends?: Config | Config[] | Config[][] }} ConfigWithExtends
- */
-
-/**
  * Keys that oxlint only recognises at the top level of a config and must not
  * appear inside an `overrides` entry. When these keys are introduced by an
  * extended config that is used inside an override, they are hoisted to the
@@ -35,27 +29,125 @@ export function getArray(value) {
 }
 
 /**
- * Split a resolved config object into top-level-only keys and the remainder.
+ * Split an object into two: one object with only the given keys, the other with
+ * the remainder.
  *
- * @param {Partial<OxlintConfig>} config - The resolved config to split.
- * @returns {{
- *   hoisted: Partial<OxlintConfig>;
- *   rest: Partial<OxlintConfig>;
- * }}
- *   The hoisted and remaining config parts.
+ * @template Type
+ * @param {Type} config - The object to split.
+ * @param {(keyof Type)[]} keys - The keys to split off.
+ * @returns {[Type, Type]} Two objects, with the first containing the given
+ *   keys.
  */
-function extractTopLevelOnly(config) {
-  const hoisted = {};
-  const rest = { ...config };
+function splitObject(config, keys) {
+  const objectWithKeys = {};
+  const objectWithoutKeys = { ...config };
 
-  for (const key of TOP_LEVEL_ONLY_KEYS) {
-    if (Object.prototype.hasOwnProperty.call(rest, key)) {
-      hoisted[key] = /** @type {unknown} */ (rest[key]);
-      delete rest[key];
+  for (const key of keys) {
+    if (Object.prototype.hasOwnProperty.call(objectWithoutKeys, key)) {
+      objectWithKeys[key] = /** @type {unknown} */ (objectWithoutKeys[key]);
+      delete objectWithoutKeys[key];
     }
   }
 
-  return { hoisted, rest };
+  return [objectWithKeys, objectWithoutKeys];
+}
+
+/**
+ * Merge an array of base configs into a single config object. Each config is
+ * first resolved via {@link createConfig}, then deep-merged in order so that
+ * later configs take precedence. Arrays are merged by concatenation with
+ * duplicates removed.
+ *
+ * @param {OxlintConfig | OxlintConfig[] | undefined} baseConfigs - One or more
+ *   base configs to merge.
+ * @returns {OxlintConfig} The merged base config.
+ */
+function mergeBaseConfigs(baseConfigs) {
+  const baseConfigsArray = getArray(baseConfigs);
+  return baseConfigsArray.reduce((mergedConfig, currentConfig) => {
+    const parsedConfig = createConfig(currentConfig);
+
+    return deepmerge(mergedConfig, parsedConfig, {
+      /**
+       * Merge arrays by concatenating them and removing duplicates.
+       *
+       * @template Target
+       * @template Source
+       * @param {Target[]} target - The target array.
+       * @param {Source[]} source - The source array.
+       * @param {deepmerge.ArrayMergeOptions} options - Options for performing
+       *   the merge.
+       * @returns {(Source & Target)[]} The result of the merge.
+       */
+      arrayMerge(target, source, options) {
+        if (options?.isMergeableObject) {
+          return [...new Set([...target, ...source])];
+        }
+
+        return source;
+      },
+    });
+  }, {});
+}
+
+/**
+ * Process a list of override configs, extracting any top-level-only keys (e.g.,
+ * `options`) from each override and merging them together. Returns the merged
+ * top-level-only options and the overrides with those keys removed.
+ *
+ * @param {OxlintConfig[]} overrides - The override configs to process.
+ * @returns {[OxlintConfig, OxlintConfig[]]} A tuple of the merged
+ *   top-level-only options and the overrides with those keys removed.
+ */
+function hoistTopLevelOnlyOptions(overrides) {
+  const result = overrides.reduce(
+    /**
+     * Reducer that processes each override, extracts its top-level-only keys
+     * into `allTopLevelOnlyOptions`, and accumulates the remaining config in
+     * `overridesWithoutTopLevelOnlyOptions`.
+     *
+     * @param {{
+     *   allTopLevelOnlyOptions: OxlintConfig;
+     *   overridesWithoutTopLevelOnlyOptions: OxlintConfig[];
+     * }} options
+     *   - The accumulated result from previous iterations.
+     * @param {OxlintConfig} override - The current override config to process.
+     * @returns {{
+     *   allTopLevelOnlyOptions: OxlintConfig;
+     *   overridesWithoutTopLevelOnlyOptions: OxlintConfig[];
+     * }}
+     *   The updated accumulator with the override merged in.
+     */
+    (
+      { allTopLevelOnlyOptions, overridesWithoutTopLevelOnlyOptions },
+      override,
+    ) => {
+      const [
+        overrideWithTopLevelOnlyOptions,
+        overrideWithoutTopLevelOnlyOptions,
+      ] = splitObject(createConfig(override), TOP_LEVEL_ONLY_KEYS);
+
+      return {
+        allTopLevelOnlyOptions: deepmerge(
+          allTopLevelOnlyOptions,
+          overrideWithTopLevelOnlyOptions,
+        ),
+        overridesWithoutTopLevelOnlyOptions: [
+          ...overridesWithoutTopLevelOnlyOptions,
+          overrideWithoutTopLevelOnlyOptions,
+        ],
+      };
+    },
+    {
+      allTopLevelOnlyOptions: {},
+      overridesWithoutTopLevelOnlyOptions: [],
+    },
+  );
+
+  return [
+    result.allTopLevelOnlyOptions,
+    result.overridesWithoutTopLevelOnlyOptions,
+  ];
 }
 
 /**
@@ -113,85 +205,19 @@ function extractTopLevelOnly(config) {
  *   extended configs merged in.
  */
 export function createConfig(config) {
-  const { extends: baseConfig, overrides = [], ...extension } = config;
-  const baseConfigs = getArray(baseConfig);
+  const {
+    extends: baseConfigs,
+    overrides = [],
+    ...configWithoutExtendsOrOverrides
+  } = config;
 
-  const result = overrides.reduce(
-    /**
-     * Reducer that processes each override, extracts its top-level-only keys
-     * into `hoistedFromOverrides`, and accumulates the remaining config in
-     * `resolvedOverrides`.
-     *
-     * @param {{
-     *   hoistedFromOverrides: OxlintConfig;
-     *   resolvedOverrides: OxlintConfig[];
-     * }} options
-     *   - The accumulated result from previous iterations.
-     * @param {OxlintConfig} override - The current override config to process.
-     * @returns {{
-     *   hoistedFromOverrides: OxlintConfig;
-     *   resolvedOverrides: OxlintConfig[];
-     * }}
-     *   The updated accumulator with the override merged in.
-     */
-    (
-      { hoistedFromOverrides: accumulator, resolvedOverrides: resolved },
-      override,
-    ) => {
-      const { hoisted, rest } = extractTopLevelOnly(createConfig(override));
-      return {
-        hoistedFromOverrides: deepmerge(accumulator, hoisted),
-        resolvedOverrides: [...resolved, rest],
-      };
-    },
-    { hoistedFromOverrides: {}, resolvedOverrides: [] },
-  );
+  const mergedBaseConfig = mergeBaseConfigs(baseConfigs);
 
-  const { hoistedFromOverrides, resolvedOverrides } = result;
-  const resolvedExtension =
-    resolvedOverrides.length > 0
-      ? { ...extension, overrides: resolvedOverrides }
-      : extension;
+  const [topLevelOnlyOptions, overridesWithoutTopLevelOnlyOptions] =
+    hoistTopLevelOnlyOptions(overrides);
 
-  const mergedBaseConfig = baseConfigs.reduce(
-    /**
-     * Reducer that merges each resolved base config into the accumulator using
-     * `deepmerge`.
-     *
-     * @param {OxlintConfig} mergedConfig - The accumulated merged config.
-     * @param {OxlintConfig} currentConfig - The current base config to merge
-     *   in.
-     * @returns {OxlintConfig} The merged config.
-     */
-    (mergedConfig, currentConfig) => {
-      const parsedConfig = createConfig(currentConfig);
-
-      return deepmerge(mergedConfig, parsedConfig, {
-        /**
-         * Merge arrays by concatenating them and removing duplicates.
-         *
-         * @template Target
-         * @template Source
-         * @param {Target[]} target - The target array.
-         * @param {Source[]} source - The source array.
-         * @param {deepmerge.ArrayMergeOptions} options - Options for performing
-         *   the merge.
-         * @returns {(Source & Target)[]} The result of the merge.
-         */
-        arrayMerge(target, source, options) {
-          if (options?.isMergeableObject) {
-            return [...new Set([...target, ...source])];
-          }
-
-          return source;
-        },
-      });
-    },
-    {},
-  );
-
-  return deepmerge(
-    deepmerge(mergedBaseConfig, hoistedFromOverrides),
-    resolvedExtension,
-  );
+  return deepmerge(deepmerge(mergedBaseConfig, topLevelOnlyOptions), {
+    ...configWithoutExtendsOrOverrides,
+    overrides: overridesWithoutTopLevelOnlyOptions,
+  });
 }

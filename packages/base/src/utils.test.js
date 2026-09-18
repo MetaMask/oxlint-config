@@ -5,7 +5,10 @@ import { createConfig } from './utils.js';
 describe('createConfig', () => {
   it('returns the same config if there are no extends', () => {
     const config = { rules: { 'no-console': 'error' } };
-    expect(createConfig(config)).toStrictEqual(config);
+    expect(createConfig(config)).toStrictEqual({
+      ...config,
+      overrides: [],
+    });
   });
 
   it('extends a single config', () => {
@@ -13,6 +16,7 @@ describe('createConfig', () => {
     const extension = { extends: baseConfig, rules: { 'no-alert': 'warn' } };
 
     const expectedConfig = {
+      overrides: [],
       rules: {
         'no-console': 'error',
         'no-alert': 'warn',
@@ -43,6 +47,7 @@ describe('createConfig', () => {
     };
 
     expect(createConfig(extension)).toStrictEqual({
+      overrides: [],
       plugins: ['foo', 'bar'],
       rules: {
         'no-foo': 'warn',
@@ -71,6 +76,7 @@ describe('createConfig', () => {
     };
 
     expect(createConfig(extension)).toStrictEqual({
+      overrides: [],
       plugins: ['foo', 'bar', 'baz'],
       rules: {
         'no-foo': 'error',
@@ -100,6 +106,7 @@ describe('createConfig', () => {
       rules: { 'no-console': 'error' },
       overrides: [
         {
+          overrides: [],
           files: ['**/*.ts'],
           plugins: ['typescript'],
           rules: {
@@ -131,6 +138,7 @@ describe('createConfig', () => {
       rules: { 'no-console': 'error' },
       overrides: [
         {
+          overrides: [],
           files: ['**/*.ts'],
           plugins: ['typescript'],
           rules: { '@typescript-eslint/no-explicit-any': 'error' },
@@ -162,6 +170,7 @@ describe('createConfig', () => {
       rules: { 'no-console': 'error' },
       overrides: [
         {
+          overrides: [],
           files: ['**/*.ts'],
           plugins: ['typescript'],
           rules: {
@@ -198,6 +207,7 @@ describe('createConfig', () => {
     };
 
     expect(createConfig(extension)).toStrictEqual({
+      overrides: [],
       plugins: ['foo', 'bar'],
       rules: {
         'no-foo': 'error',
