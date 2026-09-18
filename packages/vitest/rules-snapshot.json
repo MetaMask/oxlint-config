@@ -7,6 +7,7 @@
       }
     ]
   ],
+  "vitest/expect-expect": "deny",
   "vitest/no-alias-methods": "deny",
   "vitest/no-commented-out-tests": "deny",
   "vitest/no-conditional-expect": "deny",
@@ -14,6 +15,8 @@
   "vitest/no-disabled-tests": "deny",
   "vitest/no-duplicate-hooks": "deny",
   "vitest/no-focused-tests": "deny",
+  "vitest/no-identical-title": "deny",
+  "vitest/no-import-node-test": "deny",
   "vitest/no-interpolation-in-snapshots": "deny",
   "vitest/no-mocks-import": "deny",
   "vitest/no-restricted-matchers": [
@@ -46,8 +49,10 @@
   "vitest/prefer-to-contain": "deny",
   "vitest/prefer-to-have-length": "deny",
   "vitest/prefer-todo": "deny",
+  "vitest/require-local-test-context-for-concurrent-snapshots": "deny",
   "vitest/require-to-throw-message": "deny",
   "vitest/require-top-level-describe": "deny",
+  "vitest/valid-describe-callback": "deny",
   "vitest/valid-expect": [
     "deny",
     [
@@ -55,5 +60,6 @@
         "alwaysAwait": true
       }
     ]
-  ]
+  ],
+  "vitest/valid-title": "deny"
 }
