@@ -1,62 +1,60 @@
 import { createConfig } from '@metamask/oxlint-config';
 
 const config = createConfig({
-  plugins: ['typescript'],
+  plugins: ['typescript', 'import', 'jsdoc', 'promise'],
 
   options: {
     typeAware: true,
   },
 
   rules: {
-    // Our rules
     'typescript/array-type': 'error',
+    'typescript/await-thenable': 'error',
+    'typescript/ban-ts-comment': 'error',
     'typescript/consistent-type-assertions': 'error',
     'typescript/consistent-type-definitions': ['error', 'type'],
-    'typescript/explicit-function-return-type': 'error',
-    'typescript/no-explicit-any': 'off',
-    'typescript/no-namespace': ['error', { allowDefinitionFiles: true }],
-    'typescript/no-non-null-assertion': 'error',
-    'typescript/parameter-properties': 'error',
-    'typescript/prefer-for-of': 'error',
-    'typescript/prefer-function-type': 'error',
-    'typescript/prefer-optional-chain': 'error',
-    'typescript/unified-signatures': 'error',
-    'typescript/no-dupe-class-members': 'error',
-    'typescript/no-unused-vars': [
-      'error',
-      {
-        vars: 'all',
-        args: 'all',
-        argsIgnorePattern: '[_]+',
-        ignoreRestSiblings: true,
-      },
-    ],
-
-    // Recommended rules that require type information
-    'typescript/no-unsafe-argument': 'off',
-    'typescript/no-unsafe-assignment': 'off',
-    'typescript/no-unsafe-call': 'off',
-    'typescript/no-unsafe-member-access': 'off',
-    'typescript/no-unsafe-return': 'off',
-
-    // Recommended rules that we do not want to use
-    'typescript/no-duplicate-type-constituents': 'off',
-    'typescript/no-redundant-type-constituents': 'off',
-    'typescript/no-unsafe-enum-comparison': 'off',
-    'typescript/require-await': 'off',
-
-    // Disabled because unnecessary type arguments are sometimes helpful for
-    // readability
-    'typescript/no-unnecessary-type-arguments': 'off',
-
-    // Our rules that require type information
     'typescript/consistent-type-exports': 'error',
+    'typescript/explicit-function-return-type': 'error',
+    'typescript/no-array-delete': 'error',
+    'typescript/no-base-to-string': 'error',
+    'typescript/no-duplicate-enum-values': 'error',
+    'typescript/no-empty-object-type': 'error',
+    'typescript/no-explicit-any': 'error',
+    'typescript/no-extra-non-null-assertion': 'error',
+    'typescript/no-floating-promises': 'error',
+    'typescript/no-for-in-array': 'error',
+    'typescript/no-implied-eval': 'error',
     'typescript/no-meaningless-void-operator': 'error',
+    'typescript/no-misused-new': 'error',
+    'typescript/no-misused-promises': 'error',
+    'typescript/no-namespace': ['error', { allowDefinitionFiles: true }],
+    'typescript/no-non-null-asserted-optional-chain': 'error',
+    'typescript/no-non-null-assertion': 'error',
+    'typescript/no-require-imports': 'error',
+    'typescript/no-this-alias': 'error',
     'typescript/no-unnecessary-boolean-literal-compare': 'error',
     'typescript/no-unnecessary-qualifier': 'error',
+    'typescript/no-unnecessary-type-assertion': 'error',
+    'typescript/no-unnecessary-type-constraint': 'error',
+    'typescript/no-unsafe-argument': 'error',
+    'typescript/no-unsafe-assignment': 'error',
+    'typescript/no-unsafe-call': 'error',
+    'typescript/no-unsafe-declaration-merging': 'error',
+    'typescript/no-unsafe-function-type': 'error',
+    'typescript/no-unsafe-member-access': 'error',
+    'typescript/no-unsafe-return': 'error',
+    'typescript/no-unsafe-unary-minus': 'error',
+    'typescript/no-wrapper-object-types': 'error',
+    'typescript/only-throw-error': 'error',
+    'typescript/parameter-properties': 'error',
+    'typescript/prefer-as-const': 'error',
     'typescript/prefer-enum-initializers': 'error',
+    'typescript/prefer-for-of': 'error',
+    'typescript/prefer-function-type': 'error',
     'typescript/prefer-includes': 'error',
+    'typescript/prefer-namespace-keyword': 'error',
     'typescript/prefer-nullish-coalescing': 'error',
+    'typescript/prefer-optional-chain': 'error',
     'typescript/prefer-promise-reject-errors': [
       'error',
       { allowThrowingUnknown: true },
@@ -65,6 +63,7 @@ const config = createConfig({
     'typescript/prefer-reduce-type-parameter': 'error',
     'typescript/prefer-string-starts-ends-with': 'error',
     'typescript/promise-function-async': 'error',
+    'typescript/restrict-plus-operands': 'error',
     'typescript/restrict-template-expressions': [
       'error',
       {
@@ -78,25 +77,14 @@ const config = createConfig({
         considerDefaultExhaustiveForUnions: true,
       },
     ],
-
-    'default-param-last': 'off',
-    'typescript/default-param-last': 'error',
-
-    'no-shadow': 'off',
-    'typescript/no-shadow': ['error', { builtinGlobals: true }],
-
-    'typescript/no-unused-expressions': [
-      'error',
-      { allowShortCircuit: true, allowTernary: true },
-    ],
-
-    'no-use-before-define': 'off',
-    'typescript/no-use-before-define': ['error', { functions: false }],
-
-    'no-useless-constructor': 'off',
-    'typescript/no-useless-constructor': 'error',
+    'typescript/triple-slash-reference': 'error',
+    'typescript/unbound-method': 'error',
+    'typescript/unified-signatures': 'error',
 
     /* Import plugin rules */
+
+    // TypeScript handles named import validation.
+    'import/named': 'off',
 
     // This rule is too aggressive about combining type and non-type imports,
     // which I'm not sure that we want.
@@ -119,7 +107,8 @@ const config = createConfig({
 
     /* Promise plugin rules */
 
-    // TypeScript already validates Promise params, no need to validate them twice
+    // TypeScript already validates Promise params, no need to validate them
+    // twice.
     'promise/valid-params': 'off',
   },
 });
