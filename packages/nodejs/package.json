@@ -35,11 +35,13 @@
   "devDependencies": {
     "@metamask/auto-changelog": "^3.4.4",
     "@metamask/oxlint-config": "^0.0.0",
+    "eslint-plugin-n": "^18.3.0",
     "oxlint": "^1.82.0",
     "vitest": "^2.1.9"
   },
   "peerDependencies": {
     "@metamask/oxlint-config": "^0.0.0",
+    "eslint-plugin-n": "^18.3.0",
     "oxlint": "^1.82.0"
   },
   "engines": {
