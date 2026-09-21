@@ -425,7 +425,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@metamask/auto-changelog@npm:^6.1.1":
+"@metamask/auto-changelog@npm:^6.1.1, @metamask/auto-changelog@npm:^6.2.1":
   version: 6.2.1
   resolution: "@metamask/auto-changelog@npm:6.2.1"
   dependencies:
@@ -540,7 +540,7 @@ __metadata:
   resolution: "@metamask/oxlint-config-root@workspace:."
   dependencies:
     "@lavamoat/allow-scripts": "npm:^3.0.4"
-    "@metamask/auto-changelog": "npm:^3.4.4"
+    "@metamask/auto-changelog": "npm:^6.2.1"
     "@metamask/create-release-branch": "npm:^4.2.2"
     "@metamask/oxlint-config": "npm:^0.0.0"
     "@metamask/oxlint-config-nodejs": "npm:^0.0.0"
