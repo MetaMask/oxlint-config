@@ -38,7 +38,7 @@
     "vitest": "^2.1.9"
   },
   "peerDependencies": {
-    "@metamask/oxlint-config": "^0.0.0",
+    "@metamask/oxlint-config": "^0.1.0",
     "oxlint": "^1.82.0"
   },
   "engines": {
