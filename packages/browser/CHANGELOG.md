@@ -9,11 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.1.0]
 
-### Uncategorized
+### Added
 
-- chore(dev-deps): bump `@metamask/auto-changelog` from `^3.4.4` to `^6.2.1` ([#16](https://github.com/MetaMask/oxlint-config/pull/16))
-- chore: align base config with base ESLint config ([#7](https://github.com/MetaMask/oxlint-config/pull/7))
-- chore: update repository and base config to use Oxlint ([#2](https://github.com/MetaMask/oxlint-config/pull/2))
+- Initial release ([#17](https://github.com/MetaMask/oxlint-config/pull/17))
 
 [Unreleased]: https://github.com/MetaMask/oxlint-config/compare/@metamask/oxlint-config-browser@0.1.0...HEAD
 [0.1.0]: https://github.com/MetaMask/oxlint-config/releases/tag/@metamask/oxlint-config-browser@0.1.0
