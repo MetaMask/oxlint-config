@@ -6,10 +6,9 @@ MetaMask's [Node.js](https://nodejs.org) Oxlint configuration.
 
 ```bash
 yarn add --dev \
-    @metamask/oxlint-config@^0.1.0 \
-    @metamask/oxlint-config-nodejs@^0.1.0 \
-    oxlint@^1.82.0 \
-    eslint-plugin-n@^18.3.0
+    @metamask/oxlint-config@^0.0.0 \
+    @metamask/oxlint-config-nodejs@^0.0.0 \
+    oxlint@^1.82.0
 ```
 
 The order in which you extend ESLint rules matters.
