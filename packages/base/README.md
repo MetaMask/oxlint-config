@@ -6,7 +6,7 @@ MetaMask's base Oxlint configuration.
 
 ```bash
 yarn add --dev \
-    @metamask/oxlint-config@^0.1.0 \
+    @metamask/oxlint-config@^0.0.0 \
     oxlint@^1.82.0
 ```
 
