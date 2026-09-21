@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.0]
+
 ### Uncategorized
 
 - chore(dev-deps): bump `@metamask/auto-changelog` from `^3.4.4` to `^6.2.1` ([#16](https://github.com/MetaMask/oxlint-config/pull/16))
@@ -14,4 +16,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - chore: align base config with base ESLint config ([#7](https://github.com/MetaMask/oxlint-config/pull/7))
 - chore: update repository and base config to use Oxlint ([#2](https://github.com/MetaMask/oxlint-config/pull/2))
 
-[Unreleased]: https://github.com/MetaMask/oxlint-config/
+[Unreleased]: https://github.com/MetaMask/oxlint-config/compare/@metamask/oxlint-config-vitest@0.1.0...HEAD
+[0.1.0]: https://github.com/MetaMask/oxlint-config/releases/tag/@metamask/oxlint-config-vitest@0.1.0
