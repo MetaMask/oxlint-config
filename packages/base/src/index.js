@@ -303,7 +303,13 @@ export default defineConfig({
 
     // Unicorn rules.
     'unicorn/no-new-buffer': 'error',
-    'unicorn/no-useless-undefined': 'error',
+    'unicorn/no-useless-undefined': [
+      'error',
+      {
+        checkArguments: false,
+        checkArrowFunctionBody: false,
+      },
+    ],
   },
 });
 
