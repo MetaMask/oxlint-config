@@ -9,9 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.1.1]
 
-### Uncategorized
+### Fixed
 
-- fix: loosen `unicorn/no-useless-undefined` rule to allow undefined arguments and arrow function body ([#20](https://github.com/MetaMask/oxlint-config/pull/20))
+- Loosen `unicorn/no-useless-undefined` rule to allow undefined arguments and arrow function body ([#20](https://github.com/MetaMask/oxlint-config/pull/20))
+  - This matches the behaviour of `@metamask/eslint-config`.
 
 ## [0.1.0]
 

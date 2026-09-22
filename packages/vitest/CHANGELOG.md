@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.1.1]
 
+### Changed
+
+- Bump peer dependency `@metamask/oxlint-config` from `^0.1.0` to `^0.1.1` ([#23](https://github.com/MetaMask/oxlint-config/pull/23))
+
 ## [0.1.0]
 
 ### Added
