@@ -1,6 +1,6 @@
 {
   "name": "@metamask/oxlint-config-root",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
   "repository": {
     "type": "git",
@@ -26,10 +26,10 @@
     "@lavamoat/allow-scripts": "^3.0.4",
     "@metamask/auto-changelog": "^6.2.1",
     "@metamask/create-release-branch": "^4.2.2",
-    "@metamask/oxlint-config": "^0.1.0",
-    "@metamask/oxlint-config-nodejs": "^0.1.0",
-    "@metamask/oxlint-config-typescript": "^0.1.0",
-    "@metamask/oxlint-config-vitest": "^0.1.0",
+    "@metamask/oxlint-config": "^0.1.1",
+    "@metamask/oxlint-config-nodejs": "^0.1.1",
+    "@metamask/oxlint-config-typescript": "^0.1.1",
+    "@metamask/oxlint-config-vitest": "^0.1.1",
     "@types/node": "^22.5.5",
     "depcheck": "^1.4.7",
     "eslint-plugin-n": "^18.3.0",

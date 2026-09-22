@@ -7,11 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.1]
+
+### Changed
+
+- Bump peer dependency `@metamask/oxlint-config` from `^0.1.0` to `^0.1.1` ([#23](https://github.com/MetaMask/oxlint-config/pull/23))
+
 ## [0.1.0]
 
 ### Added
 
 - Initial release ([#17](https://github.com/MetaMask/oxlint-config/pull/17))
 
-[Unreleased]: https://github.com/MetaMask/oxlint-config/compare/@metamask/oxlint-config-vitest@0.1.0...HEAD
+[Unreleased]: https://github.com/MetaMask/oxlint-config/compare/@metamask/oxlint-config-vitest@0.1.1...HEAD
+[0.1.1]: https://github.com/MetaMask/oxlint-config/compare/@metamask/oxlint-config-vitest@0.1.0...@metamask/oxlint-config-vitest@0.1.1
 [0.1.0]: https://github.com/MetaMask/oxlint-config/releases/tag/@metamask/oxlint-config-vitest@0.1.0
