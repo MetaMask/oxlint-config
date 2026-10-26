@@ -1,4 +1,6 @@
 {
+  "typescript/no-unsafe-assignment": "allow",
+  "typescript/unbound-method": "allow",
   "vitest/consistent-test-it": [
     "deny",
     [
