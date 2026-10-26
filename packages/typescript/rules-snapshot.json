@@ -12,6 +12,14 @@
   "typescript/consistent-type-assertions": "deny",
   "typescript/consistent-type-definitions": ["deny", ["type"]],
   "typescript/consistent-type-exports": "deny",
+  "typescript/consistent-type-imports": [
+    "deny",
+    [
+      {
+        "fixStyle": "separate-type-imports"
+      }
+    ]
+  ],
   "typescript/explicit-function-return-type": "deny",
   "typescript/no-array-delete": "deny",
   "typescript/no-base-to-string": "deny",

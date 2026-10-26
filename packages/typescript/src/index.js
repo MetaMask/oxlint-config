@@ -14,6 +14,10 @@ const config = createConfig({
     'typescript/consistent-type-assertions': 'error',
     'typescript/consistent-type-definitions': ['error', 'type'],
     'typescript/consistent-type-exports': 'error',
+    'typescript/consistent-type-imports': [
+      'error',
+      { fixStyle: 'separate-type-imports' },
+    ],
     'typescript/explicit-function-return-type': 'error',
     'typescript/no-array-delete': 'error',
     'typescript/no-base-to-string': 'error',
@@ -94,8 +98,8 @@ const config = createConfig({
     // TODO: Check if this is the case for Oxlint.
     'import/no-duplicates': 'off',
 
-    // Combined with the "verbatimModuleSyntax" tsconfig option, a better option
-    // than `typescript/consistent-type-imports`.
+    // Enforces top-level `import type`, matching the `fixStyle` option of
+    // `typescript/consistent-type-imports`.
     'import/consistent-type-specifier-style': ['error', 'prefer-top-level'],
 
     /* JSDoc plugin rules */
