@@ -472,7 +472,7 @@ __metadata:
     oxlint: "npm:^1.82.0"
     vitest: "npm:^2.1.9"
   peerDependencies:
-    "@metamask/oxlint-config": ^0.1.1
+    "@metamask/oxlint-config": ^0.2.0
     oxlint: ^1.82.0
   languageName: unknown
   linkType: soft
@@ -485,7 +485,7 @@ __metadata:
     oxlint: "npm:^1.82.0"
     vitest: "npm:^2.1.9"
   peerDependencies:
-    "@metamask/oxlint-config": ^0.1.1
+    "@metamask/oxlint-config": ^0.2.0
     oxlint: ^1.82.0
   languageName: unknown
   linkType: soft
@@ -495,11 +495,11 @@ __metadata:
   resolution: "@metamask/oxlint-config-jest@workspace:packages/jest"
   dependencies:
     "@metamask/auto-changelog": "npm:^6.2.1"
-    "@metamask/oxlint-config": "npm:^0.1.1"
+    "@metamask/oxlint-config": "npm:^0.2.0"
     oxlint: "npm:^1.82.0"
     vitest: "npm:^2.1.9"
   peerDependencies:
-    "@metamask/oxlint-config": ^0.1.1
+    "@metamask/oxlint-config": ^0.2.0
     oxlint: ^1.82.0
   languageName: unknown
   linkType: soft
@@ -520,12 +520,12 @@ __metadata:
   resolution: "@metamask/oxlint-config-nodejs@workspace:packages/nodejs"
   dependencies:
     "@metamask/auto-changelog": "npm:^6.2.1"
-    "@metamask/oxlint-config": "npm:^0.1.1"
+    "@metamask/oxlint-config": "npm:^0.2.0"
     eslint-plugin-n: "npm:^18.3.0"
     oxlint: "npm:^1.82.0"
     vitest: "npm:^2.1.9"
   peerDependencies:
-    "@metamask/oxlint-config": ^0.1.1
+    "@metamask/oxlint-config": ^0.2.0
     eslint-plugin-n: ^18.3.0
     oxlint: ^1.82.0
   languageName: unknown
@@ -569,14 +569,14 @@ __metadata:
   resolution: "@metamask/oxlint-config-typescript@workspace:packages/typescript"
   dependencies:
     "@metamask/auto-changelog": "npm:^6.2.1"
-    "@metamask/oxlint-config": "npm:^0.1.1"
+    "@metamask/oxlint-config": "npm:^0.2.0"
     oxlint: "npm:^1.82.0"
     oxlint-tsgolint: "npm:^7.0.2001"
     typescript: "npm:^5.9.3"
     typescript-eslint: "npm:^8.58.1"
     vitest: "npm:^2.1.9"
   peerDependencies:
-    "@metamask/oxlint-config": ^0.1.1
+    "@metamask/oxlint-config": ^0.2.0
     oxlint: ^1.82.0
     oxlint-tsgolint: ^7.0.2001
   languageName: unknown
@@ -597,16 +597,27 @@ __metadata:
   resolution: "@metamask/oxlint-config-vitest@workspace:packages/vitest"
   dependencies:
     "@metamask/auto-changelog": "npm:^6.2.1"
-    "@metamask/oxlint-config": "npm:^0.1.1"
+    "@metamask/oxlint-config": "npm:^0.2.0"
     oxlint: "npm:^1.82.0"
     vitest: "npm:^2.1.9"
   peerDependencies:
-    "@metamask/oxlint-config": ^0.1.1
+    "@metamask/oxlint-config": ^0.2.0
     oxlint: ^1.82.0
   languageName: unknown
   linkType: soft
 
-"@metamask/oxlint-config@npm:^0.1.1, @metamask/oxlint-config@workspace:packages/base":
+"@metamask/oxlint-config@npm:^0.1.1":
+  version: 0.1.1
+  resolution: "@metamask/oxlint-config@npm:0.1.1"
+  dependencies:
+    deepmerge: "npm:^4.3.1"
+  peerDependencies:
+    oxlint: ^1.82.0
+  checksum: 10/06c708cf970cb677d53fb352565b82188edb27fd8c49b9c38d7fc35e1bd781cec90cbe1f6e1ef1d437b25a0c5d91eafed086fc1e27c7fbc874c479f3dda72454
+  languageName: node
+  linkType: hard
+
+"@metamask/oxlint-config@npm:^0.2.0, @metamask/oxlint-config@workspace:packages/base":
   version: 0.0.0-use.local
   resolution: "@metamask/oxlint-config@workspace:packages/base"
   dependencies:

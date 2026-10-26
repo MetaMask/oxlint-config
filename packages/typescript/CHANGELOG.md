@@ -9,10 +9,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.2.0]
 
-### Uncategorized
+### Changed
 
-- feat(typescript)!: enable `typescript/consistent-type-imports` rule ([#27](https://github.com/MetaMask/oxlint-config/pull/27))
-- feat(typescript)!: enable `typescript/return-await` rule ([#25](https://github.com/MetaMask/oxlint-config/pull/25))
+- **BREAKING:** Enable `typescript/consistent-type-imports` rule ([#27](https://github.com/MetaMask/oxlint-config/pull/27))
+  - The rule uses the `separate-type-imports` fix style, so type-only imports use `import type`.
+- **BREAKING:** Enable `typescript/return-await` rule ([#25](https://github.com/MetaMask/oxlint-config/pull/25))
+- Bump peer dependency `@metamask/oxlint-config` from `^0.1.1` to `^0.2.0` ([#28](https://github.com/MetaMask/oxlint-config/pull/28))
 
 ## [0.1.1]
 

@@ -9,10 +9,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.2.0]
 
-### Uncategorized
+### Changed
 
-- feat(typescript)!: enable `typescript/consistent-type-imports` rule ([#27](https://github.com/MetaMask/oxlint-config/pull/27))
-- fix(jest,vitest): disable `typescript/no-unsafe-assignment` ([#26](https://github.com/MetaMask/oxlint-config/pull/26))
+- Bump peer dependency `@metamask/oxlint-config` from `^0.1.1` to `^0.2.0` ([#28](https://github.com/MetaMask/oxlint-config/pull/28))
+
+### Fixed
+
+- Disable `typescript/no-unsafe-assignment` in test files ([#26](https://github.com/MetaMask/oxlint-config/pull/26))
 
 ## [0.1.1]
 
