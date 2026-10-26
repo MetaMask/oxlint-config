@@ -77,6 +77,7 @@ const config = createConfig({
         considerDefaultExhaustiveForUnions: true,
       },
     ],
+    'typescript/return-await': ['error', 'always'],
     'typescript/triple-slash-reference': 'error',
     'typescript/unbound-method': 'error',
     'typescript/unified-signatures': 'error',
