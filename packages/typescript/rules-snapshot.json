@@ -82,6 +82,7 @@
       }
     ]
   ],
+  "typescript/return-await": ["deny", ["always"]],
   "typescript/switch-exhaustiveness-check": [
     "deny",
     [
