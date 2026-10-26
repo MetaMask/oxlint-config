@@ -1,7 +1,7 @@
 import { createConfig } from '@metamask/oxlint-config';
 
 const config = createConfig({
-  plugins: ['jest'],
+  plugins: ['jest', 'typescript'],
 
   env: {
     jest: true,
@@ -51,6 +51,9 @@ const config = createConfig({
           'Use `toThrowErrorMatchingInlineSnapshot()` instead',
       },
     ],
+
+    // This causes false positives for things like `expect.any(...)`.
+    'typescript/no-unsafe-assignment': 'off',
 
     // This can cause a lot of errors in tests, and unfortunately Oxlint doesn't
     // have a Jest-specific replacement for this yet.

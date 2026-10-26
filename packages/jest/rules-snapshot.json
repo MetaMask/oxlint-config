@@ -63,5 +63,7 @@
     ]
   ],
   "jest/valid-expect-in-promise": "deny",
-  "jest/valid-title": "deny"
+  "jest/valid-title": "deny",
+  "typescript/no-unsafe-assignment": "allow",
+  "typescript/unbound-method": "allow"
 }

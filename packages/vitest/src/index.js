@@ -1,7 +1,7 @@
 import { createConfig } from '@metamask/oxlint-config';
 
 const config = createConfig({
-  plugins: ['vitest'],
+  plugins: ['vitest', 'typescript'],
 
   rules: {
     'vitest/consistent-test-it': ['error', { fn: 'it' }],
@@ -45,6 +45,9 @@ const config = createConfig({
           'Use `toThrowErrorMatchingInlineSnapshot()` instead.',
       },
     ],
+
+    // This causes false positives for things like `expect.any(...)`.
+    'typescript/no-unsafe-assignment': 'off',
 
     // This can cause a lot of errors in tests, and unfortunately Oxlint doesn't
     // have a Vitest-specific replacement for this yet.
