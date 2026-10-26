@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Uncategorized
+
+- feat(typescript)!: enable `typescript/consistent-type-imports` rule ([#27](https://github.com/MetaMask/oxlint-config/pull/27))
+- fix(jest,vitest): disable `typescript/no-unsafe-assignment` ([#26](https://github.com/MetaMask/oxlint-config/pull/26))
+
 ## [0.1.1]
 
 ### Changed
