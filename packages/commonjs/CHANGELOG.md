@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.0]
+
 ### Uncategorized
 
 - feat(typescript)!: enable `typescript/consistent-type-imports` rule ([#27](https://github.com/MetaMask/oxlint-config/pull/27))
@@ -23,6 +25,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Initial release ([#17](https://github.com/MetaMask/oxlint-config/pull/17))
 
-[Unreleased]: https://github.com/MetaMask/oxlint-config/compare/@metamask/oxlint-config-commonjs@0.1.1...HEAD
+[Unreleased]: https://github.com/MetaMask/oxlint-config/compare/@metamask/oxlint-config-commonjs@0.2.0...HEAD
+[0.2.0]: https://github.com/MetaMask/oxlint-config/compare/@metamask/oxlint-config-commonjs@0.1.1...@metamask/oxlint-config-commonjs@0.2.0
 [0.1.1]: https://github.com/MetaMask/oxlint-config/compare/@metamask/oxlint-config-commonjs@0.1.0...@metamask/oxlint-config-commonjs@0.1.1
 [0.1.0]: https://github.com/MetaMask/oxlint-config/releases/tag/@metamask/oxlint-config-commonjs@0.1.0
