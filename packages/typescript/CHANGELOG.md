@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.0]
+
+### Changed
+
+- **BREAKING:** Enable `typescript/consistent-type-imports` rule ([#27](https://github.com/MetaMask/oxlint-config/pull/27))
+  - The rule uses the `separate-type-imports` fix style, so type-only imports use `import type`.
+- **BREAKING:** Enable `typescript/return-await` rule ([#25](https://github.com/MetaMask/oxlint-config/pull/25))
+- Bump peer dependency `@metamask/oxlint-config` from `^0.1.1` to `^0.2.0` ([#28](https://github.com/MetaMask/oxlint-config/pull/28))
+
 ## [0.1.1]
 
 ### Changed
@@ -19,6 +28,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Initial release ([#17](https://github.com/MetaMask/oxlint-config/pull/17))
 
-[Unreleased]: https://github.com/MetaMask/oxlint-config/compare/@metamask/oxlint-config-typescript@0.1.1...HEAD
+[Unreleased]: https://github.com/MetaMask/oxlint-config/compare/@metamask/oxlint-config-typescript@0.2.0...HEAD
+[0.2.0]: https://github.com/MetaMask/oxlint-config/compare/@metamask/oxlint-config-typescript@0.1.1...@metamask/oxlint-config-typescript@0.2.0
 [0.1.1]: https://github.com/MetaMask/oxlint-config/compare/@metamask/oxlint-config-typescript@0.1.0...@metamask/oxlint-config-typescript@0.1.1
 [0.1.0]: https://github.com/MetaMask/oxlint-config/releases/tag/@metamask/oxlint-config-typescript@0.1.0
